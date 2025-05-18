@@ -1,138 +1,296 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>前端面试八股文整理</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="HTML+CSSHTML语义化HTML语义化就是指在使用HTML标签构建页面时，避免大篇幅的使用无语义的标签，比如div、span，要求尽可能的使用具有语义的标签，比如&lt;h1&gt;~&lt;h5&gt;、&lt;header&gt;、&lt;aside&gt;、&lt;footer&gt;等。 使用HTML语义化标签的作用:  易于用户阅读，样式文件未加载时，页面结构清晰。 有利于SEO，">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="chengj-code">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/05/23/前端面试八股文整理/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端面试八股文整理">
 <meta property="og:url" content="http://example.com/2023/05/23/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%85%AB%E8%82%A1%E6%96%87%E6%95%B4%E7%90%86/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="HTML+CSSHTML语义化HTML语义化就是指在使用HTML标签构建页面时，避免大篇幅的使用无语义的标签，比如div、span，要求尽可能的使用具有语义的标签，比如&lt;h1&gt;~&lt;h5&gt;、&lt;header&gt;、&lt;aside&gt;、&lt;footer&gt;等。 使用HTML语义化标签的作用:  易于用户阅读，样式文件未加载时，页面结构清晰。 有利于SEO，">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/img/avatar.jpg">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2023-05-23T12:55:00.000Z">
 <meta property="article:modified_time" content="2023-09-14T14:29:35.670Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/05/23/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%85%AB%E8%82%A1%E6%96%87%E6%95%B4%E7%90%86/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":500},
-  copy: {
-    success: 'Copy successfully',
-    error: 'Copy error',
-    noSupport: 'The browser does not support'
-  },
-  relativeDate: {
-    homepage: true,
-    post: true
-  },
-  runtime: '',
-  date_suffix: {
-    just: 'Just',
-    min: 'minutes ago',
-    hour: 'hours ago',
-    day: 'days ago',
-    month: 'months ago'
-  },
-  copyright: {"limitCount":50,"languages":{"author":"Author: John Doe","link":"Link: ","source":"Source: Hexo","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
-  lightbox: 'fancybox',
-  Snackbar: undefined,
-  source: {
-    justifiedGallery: {
-      js: 'https://fastly.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
-      css: 'https://fastly.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: false,
-  isAnchor: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '前端面试八股文整理',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2023-09-14 22:29:35'
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-    win.saveToLocal = {
-      set: function setWithExpiry(key, value, ttl) {
-        if (ttl === 0) return
-        const now = new Date()
-        const expiryDay = ttl * 86400000
-        const item = {
-          value: value,
-          expiry: now.getTime() + expiryDay,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-      },
-
-      get: function getWithExpiry(key) {
-        const itemStr = localStorage.getItem(key)
-
-        if (!itemStr) {
-          return undefined
-        }
-        const item = JSON.parse(itemStr)
-        const now = new Date()
-
-        if (now.getTime() > item.expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return item.value
-      }
-    }
-  
-    win.getScript = url => new Promise((resolve, reject) => {
-      const script = document.createElement('script')
-      script.src = url
-      script.async = true
-      script.onerror = reject
-      script.onload = script.onreadystatechange = function() {
-        const loadState = this.readyState
-        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-        script.onload = script.onreadystatechange = null
-        resolve()
-      }
-      document.head.appendChild(script)
-    })
-  
-      win.activateDarkMode = function () {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = function () {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
     
-          if (t === 'dark') activateDarkMode()
-          else if (t === 'light') activateLightMode()
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
         
-    const detectApple = () => {
-      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/chenxz21/bcxm" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-clock"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/shuoba"><i class="fa-fw fas fa-comment-dots"></i><span> 说吧</span></a></div><div class="menus_item"><a class="site-page" href="/gedan"><i class="fa-fw fas fa-music"></i><span> 歌单</span></a></div><div class="menus_item"><a class="site-page" href="/game"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk"><i class="fa-fw fa fa-heartbeat"></i><span> 时光</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tools"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/google"><span> 镜像</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://json.xbyzs.cf"><span> Json格式化</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://draw.xbyzs.cf"><span> Draw画布</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://enkey.xbyzs.cf"><span> EnKey</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-clock"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/shuoba"><i class="fa-fw fas fa-comment-dots"></i><span> 说吧</span></a></div><div class="menus_item"><a class="site-page" href="/gedan"><i class="fa-fw fas fa-music"></i><span> 歌单</span></a></div><div class="menus_item"><a class="site-page" href="/game"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk"><i class="fa-fw fa fa-heartbeat"></i><span> 时光</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-tools"></i><span> 工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/google"><span> 镜像</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://json.xbyzs.cf"><span> Json格式化</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://draw.xbyzs.cf"><span> Draw画布</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://enkey.xbyzs.cf"><span> EnKey</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">前端面试八股文整理</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon far fa-calendar-alt"></i><span class="post-meta-label">Created</span><time datetime="2023-05-23T12:55:00.000Z" title="Created 2023-05-23 20:55:00">2023-05-23</time></span></div><div class="meta-secondline"></div></div></div><article class="post-content" id="article-container"><h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><h2 id="HTML语义化"><a href="#HTML语义化" class="headerlink" title="HTML语义化"></a>HTML语义化</h2><p>HTML语义化就是指在使用HTML标签构建页面时，避免大篇幅的使用无语义的标签，比如div、span，要求尽可能的使用具有语义的标签，比如<code>&lt;h1&gt;~&lt;h5&gt;、&lt;header&gt;、&lt;aside&gt;、&lt;footer&gt;</code>等。</p>
+            前端面试八股文整理 | chengj-code的博客
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"chengj-code的博客","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                chengj-code的博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">1</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">前端面试八股文整理</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/redefine-avatar.svg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">chengj-code</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-05-23 20:55</span>
+        <span class="mobile">2023-05-23 20:55</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-09-14 22:29:35</span>
+            <span class="mobile">2023-09-14 22:29:35</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="HTML-CSS"><a href="#HTML-CSS" class="headerlink" title="HTML+CSS"></a>HTML+CSS</h1><h2 id="HTML语义化"><a href="#HTML语义化" class="headerlink" title="HTML语义化"></a>HTML语义化</h2><p>HTML语义化就是指在使用HTML标签构建页面时，避免大篇幅的使用无语义的标签，比如div、span，要求尽可能的使用具有语义的标签，比如<code>&lt;h1&gt;~&lt;h5&gt;、&lt;header&gt;、&lt;aside&gt;、&lt;footer&gt;</code>等。</p>
 <p>使用HTML语义化标签的作用:</p>
 <ol>
 <li>易于用户阅读，样式文件未加载时，页面结构清晰。</li>
@@ -1847,4 +2005,403 @@
 
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;page-tools&gt;<br>  &lt;!-- 自定义左侧内容 --&gt;<br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">slot-left</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>共 19 条记录<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br>  &lt;!-- 自定义右侧内容 --&gt;<br>  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> #<span class="hljs-attr">slot-right</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">v-power</span>=<span class="hljs-string">&quot;&#x27;import&#x27;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;danger&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;small&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;uploadBtnFn&quot;</span>&gt;</span>导入excel<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">v-power</span>=<span class="hljs-string">&quot;&#x27;export&#x27;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;success&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;small&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;exportBtnFn&quot;</span>&gt;</span>导出excel<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">el-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;small&quot;</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;addEmpBtnFn&quot;</span>&gt;</span>新增员工<span class="hljs-tag">&lt;/<span class="hljs-name">el-button</span>&gt;</span></span><br><span class="language-xml">  <span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></span><br>&lt;/page-tools&gt;<br></code></pre></td></tr></table></figure>
 
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/05/23/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%85%AB%E8%82%A1%E6%96%87%E6%95%B4%E7%90%86/">http://example.com/2023/05/23/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%85%AB%E8%82%A1%E6%96%87%E6%95%B4%E7%90%86/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://fastly.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/06/02/vue3%E5%92%8Cvue2%E5%8C%BA%E5%88%AB/"><img class="prev-cover" src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">vue3和vue2区别</div></div></a></div><div class="next-post pull-right"><a href="/2023/05/13/Vue3%E5%AD%A6%E4%B9%A0/"><img class="next-cover" src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Vue3学习</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML-CSS"><span class="toc-number">1.</span> <span class="toc-text">HTML+CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML%E8%AF%AD%E4%B9%89%E5%8C%96"><span class="toc-number">1.1.</span> <span class="toc-text">HTML语义化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E6%A0%B7%E5%BC%8F%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.2.</span> <span class="toc-text">CSS样式优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E4%BB%A5%E8%A2%AB%E7%BB%A7%E6%89%BF%E7%9A%84css%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">可以被继承的css属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%8F%AF%E4%BB%A5%E8%A2%AB%E7%BB%A7%E6%89%BF%E7%9A%84css%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.2.</span> <span class="toc-text">不可以被继承的css属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E5%B0%BA%E5%AF%B8%E8%AE%BE%E7%BD%AE%E7%9A%84%E5%8D%95%E4%BD%8D"><span class="toc-number">1.3.</span> <span class="toc-text">CSS尺寸设置的单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BFC"><span class="toc-number">1.4.</span> <span class="toc-text">BFC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E5%92%8C%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7"><span class="toc-number">1.5.</span> <span class="toc-text">高度塌陷和外边距塌陷</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7"><span class="toc-number">1.5.1.</span> <span class="toc-text">高度塌陷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7"><span class="toc-number">1.5.2.</span> <span class="toc-text">外边距塌陷</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%AE%E5%8A%A8"><span class="toc-number">1.6.</span> <span class="toc-text">浮动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.7.</span> <span class="toc-text">定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E9%80%82%E5%BA%94%E5%B8%83%E5%B1%80%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="toc-number">1.8.</span> <span class="toc-text">自适应布局的实现方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E5%88%97%E5%9B%BA%E5%AE%9A%E5%8F%B3%E5%88%97%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%9A"><span class="toc-number">1.8.1.</span> <span class="toc-text">左列固定右列自适应：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A6%E5%8F%B3%E5%AE%BD%E5%BA%A6%E5%9B%BA%E5%AE%9A%EF%BC%8C%E4%B8%AD%E9%97%B4%E5%AE%BD%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94"><span class="toc-number">1.8.2.</span> <span class="toc-text">左右宽度固定，中间宽度自适应</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80"><span class="toc-number">1.9.</span> <span class="toc-text">圣杯布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%92%E5%AD%90%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="toc-number">1.10.</span> <span class="toc-text">盒子水平垂直居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80"><span class="toc-number">1.11.</span> <span class="toc-text">移动端布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80"><span class="toc-number">1.11.1.</span> <span class="toc-text">响应式布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80%EF%BC%88%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80%EF%BC%89"><span class="toc-number">1.11.2.</span> <span class="toc-text">流式布局（百分比布局）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rem%E5%B8%83%E5%B1%80"><span class="toc-number">1.11.3.</span> <span class="toc-text">rem布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vw-vh%E5%B8%83%E5%B1%80"><span class="toc-number">1.11.4.</span> <span class="toc-text">vw&#x2F;vh布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex%E5%B8%83%E5%B1%80"><span class="toc-number">1.11.5.</span> <span class="toc-text">flex布局</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E5%AE%9E%E7%8E%B0%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="toc-number">1.12.</span> <span class="toc-text">CSS实现三角形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%97%E5%85%83%E7%B4%A0%E5%92%8C%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0"><span class="toc-number">1.13.</span> <span class="toc-text">块元素和行内元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E5%85%83%E7%B4%A0"><span class="toc-number">1.13.1.</span> <span class="toc-text">块元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0"><span class="toc-number">1.13.2.</span> <span class="toc-text">行内元素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript"><span class="toc-number">2.</span> <span class="toc-text">Javascript</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#var-let-const%E5%8C%BA%E5%88%AB"><span class="toc-number">2.1.</span> <span class="toc-text">var let const区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87"><span class="toc-number">2.2.</span> <span class="toc-text">JS变量提升</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.3.</span> <span class="toc-text">JS数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E8%B4%A8%E5%8C%BA%E5%88%AB"><span class="toc-number">2.3.1.</span> <span class="toc-text">本质区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD"><span class="toc-number">2.3.2.</span> <span class="toc-text">类型判断</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95"><span class="toc-number">2.4.</span> <span class="toc-text">数组去重方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F"><span class="toc-number">2.5.</span> <span class="toc-text">数组排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E6%96%B9%E6%B3%95"><span class="toc-number">2.6.</span> <span class="toc-text">数组遍历方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB"><span class="toc-number">2.7.</span> <span class="toc-text">数组方法汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E6%94%B9%E5%8F%98%E5%8E%9F%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">2.7.1.</span> <span class="toc-text">不改变原数组的方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9%E5%8F%98%E5%8E%9F%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">2.7.2.</span> <span class="toc-text">改变原数组的方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find%E5%92%8Cfilter%E5%8C%BA%E5%88%AB"><span class="toc-number">2.7.3.</span> <span class="toc-text">find和filter区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AA%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84"><span class="toc-number">2.8.</span> <span class="toc-text">伪数组和数组?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-number">2.8.1.</span> <span class="toc-text">伪数组和数组区别：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E8%A7%81%E5%9C%BA%E6%99%AF"><span class="toc-number">2.8.2.</span> <span class="toc-text">伪数组的常见场景:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%95%B0%E7%BB%84"><span class="toc-number">2.8.3.</span> <span class="toc-text">伪数组转换为数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E5%8F%98%E9%87%8F%E6%98%AF%E5%90%A6%E4%B8%BA%E6%95%B0%E7%BB%84%EF%BC%9F"><span class="toc-number">2.8.4.</span> <span class="toc-text">判断变量是否为数组？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95"><span class="toc-number">2.9.</span> <span class="toc-text">字符串方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81-%E8%A2%8B%E9%BC%A0%E4%BA%91%E7%AC%94%E8%AF%95"><span class="toc-number">2.10.</span> <span class="toc-text">防抖和节流(袋鼠云笔试)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js%E9%97%AD%E5%8C%85"><span class="toc-number">2.11.</span> <span class="toc-text">js闭包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6-%E8%A2%8B%E9%BC%A0%E4%BA%91%E7%AC%94%E8%AF%95"><span class="toc-number">2.12.</span> <span class="toc-text">JS垃圾回收机制(袋鼠云笔试)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this%E6%8C%87%E5%90%91"><span class="toc-number">2.13.</span> <span class="toc-text">this指向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="toc-number">2.14.</span> <span class="toc-text">箭头函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF"><span class="toc-number">2.15.</span> <span class="toc-text">事件循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="toc-number">2.16.</span> <span class="toc-text">宏任务微任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-number">2.17.</span> <span class="toc-text">原型和原型链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="toc-number">2.18.</span> <span class="toc-text">事件委托</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E6%89%A9%E5%B1%95%E7%AC%A6%E7%94%A8%E8%BF%87%E5%90%97-%E2%80%A6"><span class="toc-number">2.19.</span> <span class="toc-text">事件扩展符用过吗(…)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0%E5%92%8Carguments%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.19.1.</span> <span class="toc-text">剩余参数和arguments对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="toc-number">2.20.</span> <span class="toc-text">浅拷贝和深拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">2.20.1.</span> <span class="toc-text">浅拷贝实现方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">2.20.2.</span> <span class="toc-text">深拷贝实现方法：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E8%AF%B7%E6%B1%82%EF%BC%9F"><span class="toc-number">2.21.</span> <span class="toc-text">http请求？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E7%8A%B6%E6%80%81%E7%A0%81%EF%BC%9F"><span class="toc-number">2.22.</span> <span class="toc-text">http状态码？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87"><span class="toc-number">2.23.</span> <span class="toc-text">http请求报文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87"><span class="toc-number">2.24.</span> <span class="toc-text">http响应报文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E5%92%8Chttps%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.25.</span> <span class="toc-text">http和https协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie%E3%80%81localStorage%E3%80%81sessionStorage%E7%9A%84%E5%8C%BA%E5%88%AB-%E8%A2%8B%E9%BC%A0%E4%BA%91%E7%AC%94%E8%AF%95"><span class="toc-number">2.26.</span> <span class="toc-text">cookie、localStorage、sessionStorage的区别(袋鼠云笔试)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#token"><span class="toc-number">2.27.</span> <span class="toc-text">token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E6%98%AF%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E7%9A%84"><span class="toc-number">2.28.</span> <span class="toc-text">后台管理系统中的权限管理是怎么实现的?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise"><span class="toc-number">2.29.</span> <span class="toc-text">Promise</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="toc-number">2.29.1.</span> <span class="toc-text">定义：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9A"><span class="toc-number">2.29.2.</span> <span class="toc-text">应用场景：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">2.29.3.</span> <span class="toc-text">优点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="toc-number">2.29.4.</span> <span class="toc-text">缺点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81%EF%BC%9A"><span class="toc-number">2.29.5.</span> <span class="toc-text">三种状态：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%B3%95%EF%BC%9A"><span class="toc-number">2.29.6.</span> <span class="toc-text">用法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Promise%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">2.29.7.</span> <span class="toc-text">Promise的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#async%E5%92%8Cawait%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.29.8.</span> <span class="toc-text">async和await的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise%E9%9D%A2%E8%AF%95%E9%A2%98%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%E7%9A%84%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E6%98%AF%EF%BC%9F"><span class="toc-number">2.30.</span> <span class="toc-text">Promise面试题以下代码的执行结果是？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E6%98%BE%E7%A4%BA%E5%AE%8C%E6%88%90%EF%BC%8C%E8%BF%99%E4%B8%AA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%83%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">2.31.</span> <span class="toc-text">一个页面从输入URL到页面加载显示完成，这个过程中都发生了什么?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="toc-number">2.32.</span> <span class="toc-text">跨域是什么? 如何解决跨域问题?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">2.33.</span> <span class="toc-text">项目性能优化方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD"><span class="toc-number">2.34.</span> <span class="toc-text">图片懒加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%B5%8F%E8%A7%88%E5%99%A8url%E4%B8%AD%E6%9F%A5%E8%AF%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-number">2.35.</span> <span class="toc-text">获取浏览器url中查询字符串的参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Set%E5%92%8CMap"><span class="toc-number">2.36.</span> <span class="toc-text">Set和Map</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Map"><span class="toc-number">2.36.1.</span> <span class="toc-text">Map</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set"><span class="toc-number">2.36.2.</span> <span class="toc-text">Set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Map%E5%92%8CSet%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-number">2.36.3.</span> <span class="toc-text">Map和Set区别：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS%E8%8E%B7%E5%8F%96DOM%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.37.</span> <span class="toc-text">JS获取DOM元素的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-number">2.38.</span> <span class="toc-text">HTML5自定义属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="toc-number">2.39.</span> <span class="toc-text">节点操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#websocket%E5%92%8Chttp"><span class="toc-number">2.40.</span> <span class="toc-text">websocket和http</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript%E7%9A%84%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0"><span class="toc-number">2.41.</span> <span class="toc-text">JavaScript的全局函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue"><span class="toc-number">3.</span> <span class="toc-text">Vue</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MVC%E5%92%8CMVVM%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.1.</span> <span class="toc-text">MVC和MVVM的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue2-0-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BC%BA%E9%99%B7"><span class="toc-number">3.2.</span> <span class="toc-text">Vue2.0 响应式原理与缺陷?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86"><span class="toc-number">3.3.</span> <span class="toc-text">Vue双向数据绑定原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E4%B8%AD%E4%B8%BA%E4%BB%80%E4%B9%88%E6%95%B0%E6%8D%AE%E5%8F%98%E4%BA%86%EF%BC%8C%E8%A7%86%E5%9B%BE%E6%B2%A1%E5%8F%98%EF%BC%9F"><span class="toc-number">3.4.</span> <span class="toc-text">Vue中为什么数据变了，视图没变？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E4%B8%AD%E7%9A%84data%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%EF%BC%9F%EF%BC%88%E9%9D%A2%E8%AF%95%E5%B8%B8%E9%97%AE%EF%BC%89"><span class="toc-number">3.5.</span> <span class="toc-text">vue中的data为什么是一个函数？（面试常问）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vuex%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E6%AF%8F%E4%B8%AA%E5%B1%9E%E6%80%A7%E6%98%AF%E5%B9%B2%E5%98%9B%E7%9A%84"><span class="toc-number">3.6.</span> <span class="toc-text">Vuex是什么，每个属性是干嘛的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-%E8%A2%8B%E9%BC%A0%E4%BA%91%E7%AC%94%E8%AF%95"><span class="toc-number">3.7.</span> <span class="toc-text">生命周期(袋鼠云笔试)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeCreate%EF%BC%88%E5%88%9B%E5%BB%BA%E5%89%8D%EF%BC%89"><span class="toc-number">3.7.1.</span> <span class="toc-text">beforeCreate（创建前）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#created%EF%BC%88%E5%88%9B%E5%BB%BA%E5%90%8E%EF%BC%89"><span class="toc-number">3.7.2.</span> <span class="toc-text">created（创建后）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeMount%EF%BC%88%E6%8C%82%E8%BD%BD%E5%89%8D%EF%BC%89"><span class="toc-number">3.7.3.</span> <span class="toc-text">beforeMount（挂载前）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mounted%EF%BC%88%E6%8C%82%E8%BD%BD%E5%90%8E%EF%BC%89"><span class="toc-number">3.7.4.</span> <span class="toc-text">mounted（挂载后）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeUpdate%EF%BC%88%E6%9B%B4%E6%96%B0%E5%89%8D%EF%BC%89"><span class="toc-number">3.7.5.</span> <span class="toc-text">beforeUpdate（更新前）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#updated%EF%BC%88%E6%9B%B4%E6%96%B0%E5%90%8E%EF%BC%89"><span class="toc-number">3.7.6.</span> <span class="toc-text">updated（更新后）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#beforeDestroy%EF%BC%88%E9%94%80%E6%AF%81%E5%89%8D%EF%BC%89"><span class="toc-number">3.7.7.</span> <span class="toc-text">beforeDestroy（销毁前）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#destroyed%EF%BC%88%E9%94%80%E6%AF%81%E5%90%8E%EF%BC%89"><span class="toc-number">3.7.8.</span> <span class="toc-text">destroyed（销毁后）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-if%E5%92%8Cv-show%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.8.</span> <span class="toc-text">v-if和v-show的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#scoped%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="toc-number">3.9.</span> <span class="toc-text">scoped相关知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-for%E6%9B%B4%E6%96%B0%E7%9B%91%E6%B5%8B"><span class="toc-number">3.10.</span> <span class="toc-text">v-for更新监测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%8C%85%E5%90%8Edist%E7%9B%AE%E5%BD%95%E8%BF%87%E5%A4%A7%EF%BC%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%EF%BC%9F"><span class="toc-number">3.11.</span> <span class="toc-text">打包后dist目录过大，解决办法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#watch%E5%92%8Ccomputed%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.12.</span> <span class="toc-text">watch和computed的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92"><span class="toc-number">3.13.</span> <span class="toc-text">vue组件之间的数据传递</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%B6%E7%BB%84%E4%BB%B6%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="toc-number">3.13.1.</span> <span class="toc-text">父组件给子组件传递数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6%E7%BB%99%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="toc-number">3.13.2.</span> <span class="toc-text">子组件给父组件传递数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6%E9%9C%80%E8%A6%81%E8%B0%83%E7%94%A8%E7%88%B6%E7%BB%84%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">3.13.3.</span> <span class="toc-text">子组件需要调用父组件的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%B6%E7%BB%84%E4%BB%B6%E8%B0%83%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="toc-number">3.13.4.</span> <span class="toc-text">父组件调用子组件方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#emit%E3%80%81-on%E6%96%B9%E5%BC%8F"><span class="toc-number">3.13.4.1.</span> <span class="toc-text">$emit、$on方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87ref%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="toc-number">3.13.4.2.</span> <span class="toc-text">通过ref直接调用子组件方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E5%87%86%E5%A4%87%EF%BC%88%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%9Agit-svn%EF%BC%89"><span class="toc-number">3.14.</span> <span class="toc-text">管理准备（项目代码版本管理工具：git&#x2F;svn）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%981%EF%BC%9A%E6%96%B0%E6%97%A7%E9%A1%B9%E7%9B%AE%EF%BC%8C%E7%A1%AE%E4%BF%9D%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%9F"><span class="toc-number">3.14.1.</span> <span class="toc-text">问题1：新旧项目，确保有什么文件夹？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%BF%E5%88%B0%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.14.2.</span> <span class="toc-text">拿到项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%982%EF%BC%9A%E5%A6%82%E6%9E%9C%E6%97%A7%E9%A1%B9%E7%9B%AE%EF%BC%88%E8%BF%9B%E5%85%AC%E5%8F%B8%E7%AC%AC%E4%B8%80%E4%BB%B6%E4%BA%8B%EF%BC%89%E5%A6%82%E4%BD%95%E5%BE%97%E5%88%B0%E5%88%AB%E4%BA%BA%E7%9A%84%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%EF%BC%9F"><span class="toc-number">3.14.2.1.</span> <span class="toc-text">问题2：如果旧项目（进公司第一件事）如何得到别人的项目代码？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%983%EF%BC%9A%E5%85%8B%E9%9A%86%E5%91%BD%E4%BB%A4%E6%98%AF%E5%81%9A%E4%BB%80%E4%B9%88%E7%9A%84%E5%91%A2%EF%BC%9F"><span class="toc-number">3.14.2.2.</span> <span class="toc-text">问题3：克隆命令是做什么的呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="toc-number">3.14.2.3.</span> <span class="toc-text">注意事项：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%984%EF%BC%9A%E5%A6%82%E6%9E%9C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%9C%89%E6%9B%B4%E6%96%B0%EF%BC%8C%E5%A6%82%E4%BD%95%E6%8B%BF%E5%88%B0%E6%9B%B4%E6%96%B0%E4%BB%A5%E5%90%8E%E7%9A%84%E5%86%85%E5%AE%B9%E5%88%B0%E6%9C%AC%E5%9C%B0%EF%BC%9F"><span class="toc-number">3.14.2.4.</span> <span class="toc-text">问题4：如果远程仓库有更新，如何拿到更新以后的内容到本地？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.14.3.</span> <span class="toc-text">推送项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%986%EF%BC%9A%E6%9C%AC%E5%9C%B0git%E8%AE%B0%E5%BD%95%E6%9C%89%E5%BE%88%E5%A4%9A%E6%AC%A1%EF%BC%8C%E4%B8%80%E6%AC%A1%E6%80%A7%E4%BF%9D%E5%AD%98%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8A%EF%BC%9F"><span class="toc-number">3.14.3.1.</span> <span class="toc-text">问题6：本地git记录有很多次，一次性保存到远程仓库上？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git%E5%91%BD%E4%BB%A4"><span class="toc-number">3.15.</span> <span class="toc-text">git命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%86%E6%94%AF%E6%98%8E%E7%BB%86"><span class="toc-number">3.15.1.</span> <span class="toc-text">1.分支明细</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%86%E6%94%AF%E5%91%BD%E4%BB%A4"><span class="toc-number">3.15.2.</span> <span class="toc-text">2.分支命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%9A%82%E6%97%B6%E4%BF%9D%E5%AD%98%E6%9B%B4%E6%94%B9"><span class="toc-number">3.15.3.</span> <span class="toc-text">3.暂时保存更改</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">3.16.</span> <span class="toc-text">Vue修饰符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this-nextTick"><span class="toc-number">3.17.</span> <span class="toc-text">this.$nextTick()</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-number">3.17.1.</span> <span class="toc-text">使用原理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">3.17.2.</span> <span class="toc-text">使用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#route%E5%92%8C-router"><span class="toc-number">3.18.</span> <span class="toc-text">$route和$router</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#route"><span class="toc-number">3.18.1.</span> <span class="toc-text">$route</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#router"><span class="toc-number">3.18.2.</span> <span class="toc-text">$router</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E4%B8%ADhash%E5%92%8Chistory%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.19.</span> <span class="toc-text">Vue中hash和history的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="toc-number">3.20.</span> <span class="toc-text">单向数据流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E4%B8%AD%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">3.21.</span> <span class="toc-text">Vue中父子组件生命周期</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text">Vue面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E4%B8%ADkeep-alive%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">4.1.</span> <span class="toc-text">vue中keep-alive组件的作用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%EF%BC%9A%EF%BC%88%E4%B8%8B%E9%9D%A2%E7%9A%84%E5%86%99%E6%B3%95%E6%98%AF%E5%B0%86%E7%BB%84%E4%BB%B6%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E8%BF%9B%E8%A1%8C%E7%BC%93%E5%AD%98%EF%BC%89"><span class="toc-number">4.1.1.</span> <span class="toc-text">实际应用：（下面的写法是将组件在内存中进行缓存）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#include-%E5%92%8C-exclude-%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">4.1.2.</span> <span class="toc-text">include 和 exclude 属性的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E4%B8%AD%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E5%8F%AF%E5%A4%8D%E7%94%A8%E7%9A%84%E7%BB%84%E4%BB%B6"><span class="toc-number">4.2.</span> <span class="toc-text">Vue中如何编写可复用的组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E9%9D%9E%E5%B7%A5%E7%A8%8B%E5%8C%96%E9%A1%B9%E7%9B%AE%EF%BC%8C%E7%BD%91%E9%80%9F%E6%85%A2%E6%97%B6%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B5%E9%9D%A2%E9%97%AA%E5%8A%A8%E9%97%AE%E9%A2%98"><span class="toc-number">4.3.</span> <span class="toc-text">如何解决非工程化项目，网速慢时初始化页面闪动问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A"><span class="toc-number">4.4.</span> <span class="toc-text">组件之间双向绑定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Scoped-CSS%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">4.5.</span> <span class="toc-text">Scoped CSS的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB"><span class="toc-number">4.5.1.</span> <span class="toc-text">区别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">4.5.1.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">4.5.1.2.</span> <span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%80%81-deep-%E3%80%81-v-deep%E6%B7%B1%E5%BA%A6%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">4.5.2.</span> <span class="toc-text">&gt;&gt;&gt;、&#x2F;deep&#x2F;、::v-deep深度选择器的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-number">4.5.2.1.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E7%90%86-1"><span class="toc-number">4.5.2.2.</span> <span class="toc-text">原理</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%AD%E6%A0%87%E6%85%A7%E5%AE%89"><span class="toc-number">5.</span> <span class="toc-text">中标慧安</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E8%AE%BE%E7%BD%AE6px%E5%A4%A7%E5%B0%8F%EF%BC%9F"><span class="toc-number">5.1.</span> <span class="toc-text">怎么设置6px大小？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7"><span class="toc-number">5.2.</span> <span class="toc-text">文字溢出显示省略号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA"><span class="toc-number">5.2.1.</span> <span class="toc-text">单行文本溢出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA"><span class="toc-number">5.2.2.</span> <span class="toc-text">多行文本溢出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E5%AE%9E%E7%8E%B0%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="toc-number">5.3.</span> <span class="toc-text">css实现三角形</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8"><span class="toc-number">5.4.</span> <span class="toc-text">清除浮动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html5%E6%96%B0%E5%A2%9E%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">5.5.</span> <span class="toc-text">html5新增了什么</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE"><span class="toc-number">5.5.1.</span> <span class="toc-text">语义化标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webStorage-%E5%82%A8%E5%AD%98%E6%9C%BA%E5%88%B6-sessionStorage-%E5%92%8C-localStorage"><span class="toc-number">5.5.2.</span> <span class="toc-text">webStorage 储存机制 sessionStorage 和 localStorage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#history-%E5%AF%B9%E8%B1%A1"><span class="toc-number">5.5.3.</span> <span class="toc-text">history 对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0input%E6%96%B0%E5%A2%9E%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">5.5.4.</span> <span class="toc-text">表单元素input新增的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%AA%92%E4%BD%93"><span class="toc-number">5.5.5.</span> <span class="toc-text">多媒体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BA%8E%E7%BB%98%E7%94%BB%E7%9A%84-canvas"><span class="toc-number">5.5.6.</span> <span class="toc-text">用于绘画的 canvas</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">5.6.</span> <span class="toc-text">css隐藏元素的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack%E7%83%AD%E6%9B%B4%E6%96%B0"><span class="toc-number">5.7.</span> <span class="toc-text">webpack热更新</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E5%88%B0%E7%9A%84webpack%E5%B1%9E%E6%80%A7"><span class="toc-number">5.8.</span> <span class="toc-text">用到的webpack属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE-1"><span class="toc-number">5.9.</span> <span class="toc-text">原型和原型链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="toc-number">5.10.</span> <span class="toc-text">vue组件通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4"><span class="toc-number">5.11.</span> <span class="toc-text">常用git命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E8%87%B3master%E4%B8%BB%E5%88%86%E6%94%AF"><span class="toc-number">5.11.1.</span> <span class="toc-text">将代码推送至master主分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-%E6%8A%8Amaster%E5%88%86%E6%94%AF%E4%BB%A3%E7%A0%81%E5%90%88%E5%B9%B6%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%88%86%E6%94%AF"><span class="toc-number">5.11.2.</span> <span class="toc-text">git 把master分支代码合并到自己的分支</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-number">5.12.</span> <span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for%E5%92%8CforEach%E5%A6%82%E4%BD%95%E4%B8%AD%E6%96%AD%E5%BE%AA%E7%8E%AF"><span class="toc-number">5.13.</span> <span class="toc-text">for和forEach如何中断循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E4%B8%ADwatch%E5%92%8Ccomputed%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">5.14.</span> <span class="toc-text">vue中watch和computed的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RBAC%E6%9D%83%E9%99%90%E8%AE%BE%E8%AE%A1"><span class="toc-number">5.15.</span> <span class="toc-text">RBAC权限设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-1"><span class="toc-number">5.16.</span> <span class="toc-text">Promise</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81%EF%BC%9A-1"><span class="toc-number">5.16.1.</span> <span class="toc-text">三种状态：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%B3%95%EF%BC%9A-1"><span class="toc-number">5.16.2.</span> <span class="toc-text">用法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">5.16.3.</span> <span class="toc-text">优缺点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6%E6%96%B0%E5%A2%9E"><span class="toc-number">5.17.</span> <span class="toc-text">ES6新增</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">5.18.</span> <span class="toc-text">闭包</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B0%8F%E6%B2%A9%E7%A7%91%E6%8A%80"><span class="toc-number">6.</span> <span class="toc-text">小沩科技</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87-1"><span class="toc-number">6.1.</span> <span class="toc-text">http请求报文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87-1"><span class="toc-number">6.2.</span> <span class="toc-text">http响应报文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#https"><span class="toc-number">6.3.</span> <span class="toc-text">https</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#https%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87%EF%BC%9A"><span class="toc-number">6.3.1.</span> <span class="toc-text">https设计目标：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#https%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">6.3.2.</span> <span class="toc-text">https优点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#https%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="toc-number">6.3.3.</span> <span class="toc-text">https缺点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http%E5%92%8Chttps%E5%8C%BA%E5%88%AB"><span class="toc-number">6.3.4.</span> <span class="toc-text">http和https区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E8%AF%B7%E6%B1%82"><span class="toc-number">6.4.</span> <span class="toc-text">http请求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="toc-number">6.5.</span> <span class="toc-text">进程和线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2"><span class="toc-number">6.6.</span> <span class="toc-text">内存泄露</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E8%B5%B7%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E7%9A%84%E5%8E%9F%E5%9B%A0%EF%BC%9A"><span class="toc-number">6.6.1.</span> <span class="toc-text">引起内存泄漏的原因：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%84%8F%E5%A4%96%E7%9A%84%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-number">6.6.1.1.</span> <span class="toc-text">意外的全局变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AD%E5%8C%85%E5%BC%95%E8%B5%B7%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="toc-number">6.6.1.2.</span> <span class="toc-text">闭包引起的内存泄漏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B2%A1%E6%9C%89%E6%B8%85%E7%90%86%E7%9A%84DOM%E5%85%83%E7%B4%A0%E5%BC%95%E7%94%A8"><span class="toc-number">6.6.1.3.</span> <span class="toc-text">没有清理的DOM元素引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A2%AB%E9%81%97%E5%BF%98%E7%9A%84%E5%AE%9A%E6%97%B6%E5%99%A8%E6%88%96%E8%80%85%E5%9B%9E%E8%B0%83"><span class="toc-number">6.6.1.4.</span> <span class="toc-text">被遗忘的定时器或者回调</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue%E4%B8%AD%E5%AE%B9%E6%98%93%E5%87%BA%E7%8E%B0%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5"><span class="toc-number">6.6.2.</span> <span class="toc-text">vue中容易出现内存泄漏的几种情况</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E9%80%A0%E6%88%90%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2"><span class="toc-number">6.6.2.1.</span> <span class="toc-text">全局变量造成的内存泄露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%91%E5%90%AC%E5%9C%A8-window-body-%E7%AD%89%E4%BA%8B%E4%BB%B6%E6%B2%A1%E6%9C%89%E8%A7%A3%E7%BB%91"><span class="toc-number">6.6.2.2.</span> <span class="toc-text">监听在 window&#x2F;body 等事件没有解绑</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9E%E5%B8%86%E7%A7%91%E6%8A%80"><span class="toc-number">7.</span> <span class="toc-text">连帆科技</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E5%92%8C%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">7.1.</span> <span class="toc-text">匿名函数和箭头函数的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="toc-number">7.1.1.</span> <span class="toc-text">匿名函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0-1"><span class="toc-number">7.1.2.</span> <span class="toc-text">箭头函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-number">7.1.3.</span> <span class="toc-text">区别：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this%E7%9A%84%E6%8C%87%E5%90%91"><span class="toc-number">7.2.</span> <span class="toc-text">this的指向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B9%E5%8F%98this%E7%9A%84%E6%8C%87%E5%90%91"><span class="toc-number">7.3.</span> <span class="toc-text">改变this的指向</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#call"><span class="toc-number">7.3.1.</span> <span class="toc-text">call</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#apply"><span class="toc-number">7.3.2.</span> <span class="toc-text">apply</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bind"><span class="toc-number">7.3.3.</span> <span class="toc-text">bind</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB%EF%BC%9A-1"><span class="toc-number">7.3.4.</span> <span class="toc-text">区别：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="toc-number">7.4.</span> <span class="toc-text">翻转链表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%A8sum%E5%87%BD%E6%95%B0"><span class="toc-number">7.5.</span> <span class="toc-text">补全sum函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE"><span class="toc-number">7.6.</span> <span class="toc-text">实现一个按钮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6%E6%96%B0%E5%A2%9E%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">7.7.</span> <span class="toc-text">ES6新增了什么</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Symbol"><span class="toc-number">7.7.1.</span> <span class="toc-text">Symbol</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#var%E3%80%81let%E5%92%8Cconst"><span class="toc-number">7.7.2.</span> <span class="toc-text">var、let和const</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="toc-number">7.7.3.</span> <span class="toc-text">解构赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set%E5%92%8CMap-1"><span class="toc-number">7.7.4.</span> <span class="toc-text">Set和Map</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Set-1"><span class="toc-number">7.7.4.1.</span> <span class="toc-text">Set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Map-1"><span class="toc-number">7.7.4.2.</span> <span class="toc-text">Map</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise-2"><span class="toc-number">7.8.</span> <span class="toc-text">Promise</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%9B%E4%BD%9B%E8%BD%AF%E4%BB%B6%E7%AC%94%E8%AF%95"><span class="toc-number">8.</span> <span class="toc-text">笛佛软件笔试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%AA%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E8%83%BD%E8%A2%ABfor%E2%80%A6of%E2%80%A6%E9%81%8D%E5%8E%86"><span class="toc-number">8.1.</span> <span class="toc-text">哪些数据结构不能被for…of…遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS%E5%B1%9E%E6%80%A7%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F"><span class="toc-number">8.2.</span> <span class="toc-text">CSS属性书写顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS%E8%8E%B7%E5%8F%96%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7key%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">8.3.</span> <span class="toc-text">JS获取对象属性key的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0"><span class="toc-number">8.4.</span> <span class="toc-text">JS全局函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%9B%E4%BD%9B%E8%BD%AF%E4%BB%B6%E9%9D%A2%E8%AF%95"><span class="toc-number">9.</span> <span class="toc-text">笛佛软件面试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#window%E7%9A%84onload%E4%BA%8B%E4%BB%B6"><span class="toc-number">9.1.</span> <span class="toc-text">window的onload事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#window%E5%AF%B9%E8%B1%A1%E5%B8%B8%E8%A7%81%E4%BA%8B%E4%BB%B6"><span class="toc-number">9.1.1.</span> <span class="toc-text">window对象常见事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AA%97%E5%8F%A3%E5%8A%A0%E8%BD%BD%E4%BA%8B%E4%BB%B6"><span class="toc-number">9.1.1.1.</span> <span class="toc-text">窗口加载事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E6%95%B4%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E4%BA%8B%E4%BB%B6"><span class="toc-number">9.1.1.2.</span> <span class="toc-text">调整窗口大小事件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BOM%E5%92%8CDOM"><span class="toc-number">9.2.</span> <span class="toc-text">BOM和DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#location%E5%AF%B9%E8%B1%A1"><span class="toc-number">9.2.1.</span> <span class="toc-text">location对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#location%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="toc-number">9.2.1.1.</span> <span class="toc-text">location对象属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#navigation%E5%AF%B9%E8%B1%A1"><span class="toc-number">9.2.2.</span> <span class="toc-text">navigation对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#history%E5%AF%B9%E8%B1%A1"><span class="toc-number">9.2.3.</span> <span class="toc-text">history对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">9.3.</span> <span class="toc-text">computed和watch的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">9.4.</span> <span class="toc-text">js事件委托的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96"><span class="toc-number">9.5.</span> <span class="toc-text">节流和防抖</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E6%8A%96"><span class="toc-number">9.5.1.</span> <span class="toc-text">防抖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8A%82%E6%B5%81"><span class="toc-number">9.5.2.</span> <span class="toc-text">节流</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB"><span class="toc-number">9.6.</span> <span class="toc-text">路由导航守卫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%89%8D%E7%BD%AE%E5%AE%88%E5%8D%AB"><span class="toc-number">9.6.1.</span> <span class="toc-text">路由前置守卫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%90%8E%E7%BD%AE%E5%AE%88%E5%8D%AB"><span class="toc-number">9.6.2.</span> <span class="toc-text">路由后置守卫</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-number">9.7.</span> <span class="toc-text">拦截器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-number">9.7.1.</span> <span class="toc-text">请求拦截器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="toc-number">9.7.2.</span> <span class="toc-text">响应拦截器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%89%E9%92%AE%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-number">9.8.</span> <span class="toc-text">按钮的权限管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F%E5%8C%BA%E5%88%AB"><span class="toc-number">9.9.</span> <span class="toc-text">路由模式区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git"><span class="toc-number">9.10.</span> <span class="toc-text">Git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E4%B8%AD%E5%BC%8F%E5%92%8C%E5%88%86%E5%B8%83%E5%BC%8F%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D"><span class="toc-number">9.10.1.</span> <span class="toc-text">集中式和分布式是什么意思</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-stash"><span class="toc-number">9.10.2.</span> <span class="toc-text">git stash</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E9%9A%BE%E7%82%B9"><span class="toc-number">10.</span> <span class="toc-text">项目难点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B9%E7%9B%AE"><span class="toc-number">10.1.</span> <span class="toc-text">移动端项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%BC%93%E5%AD%98"><span class="toc-number">10.1.1.</span> <span class="toc-text">组件缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E5%83%8F%E5%92%8C%E5%A7%93%E5%90%8D%E4%BC%98%E5%8C%96"><span class="toc-number">10.1.2.</span> <span class="toc-text">头像和姓名优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E6%9C%AA%E9%81%82%E9%A1%B5%E9%9D%A2-%E5%88%B7%E6%96%B0token"><span class="toc-number">10.1.3.</span> <span class="toc-text">登录未遂页面&#x2F;刷新token</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%96%E9%A1%B5-%E4%BF%9D%E5%AD%98%E6%BB%9A%E5%8A%A8%E6%9D%A1%E4%BD%8D%E7%BD%AE"><span class="toc-number">10.1.4.</span> <span class="toc-text">首页-保存滚动条位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E9%81%93%E5%88%87%E6%8D%A2%E6%BB%9A%E5%8A%A8%E4%BD%8D%E7%BD%AE%E4%BF%9D%E5%AD%98"><span class="toc-number">10.1.5.</span> <span class="toc-text">频道切换滚动位置保存</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%BA%E8%B5%84%E9%A1%B9%E7%9B%AE"><span class="toc-number">10.2.</span> <span class="toc-text">人资项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6"><span class="toc-number">10.2.1.</span> <span class="toc-text">页面访问权限控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E9%92%AE%E6%93%8D%E4%BD%9C%E6%9D%83%E9%99%90"><span class="toc-number">10.2.2.</span> <span class="toc-text">按钮操作权限</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/chenxz21/bcxm" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">微信公众号: 小白一只手</div></div></div></div></main><footer id="footer" style="background: #FFFFFF"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/chenxz21/hexo-theme-bcxm">Bcxm</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://fastly.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script type="text/javascript" src="https://fastly.jsdelivr.net/npm/leancloud-storage@4.10.0/dist/av-min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://fastly.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://fastly.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 前端面试八股文整理</li>
+        <li><strong>Author:</strong> chengj-code</li>
+        <li><strong>Created at
+                :</strong> 2023-05-23 20:55:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2023-09-14 22:29:35
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://chengj-code.github.io/2023/05/23/前端面试八股文整理/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2023/06/02/vue3%E5%92%8Cvue2%E5%8C%BA%E5%88%AB/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">vue3和vue2区别</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2023/05/13/Vue3%E5%AD%A6%E4%B9%A0/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Vue3学习</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">前端面试八股文整理</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-CSS"><span class="nav-text">HTML+CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML%E8%AF%AD%E4%B9%89%E5%8C%96"><span class="nav-text">HTML语义化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E6%A0%B7%E5%BC%8F%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-text">CSS样式优先级</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E8%A2%AB%E7%BB%A7%E6%89%BF%E7%9A%84css%E5%B1%9E%E6%80%A7"><span class="nav-text">可以被继承的css属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E5%8F%AF%E4%BB%A5%E8%A2%AB%E7%BB%A7%E6%89%BF%E7%9A%84css%E5%B1%9E%E6%80%A7"><span class="nav-text">不可以被继承的css属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E5%B0%BA%E5%AF%B8%E8%AE%BE%E7%BD%AE%E7%9A%84%E5%8D%95%E4%BD%8D"><span class="nav-text">CSS尺寸设置的单位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BFC"><span class="nav-text">BFC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E5%92%8C%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7"><span class="nav-text">高度塌陷和外边距塌陷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7"><span class="nav-text">高度塌陷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%A1%8C%E9%99%B7"><span class="nav-text">外边距塌陷</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%AE%E5%8A%A8"><span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%BD%8D"><span class="nav-text">定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E9%80%82%E5%BA%94%E5%B8%83%E5%B1%80%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="nav-text">自适应布局的实现方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A6%E5%88%97%E5%9B%BA%E5%AE%9A%E5%8F%B3%E5%88%97%E8%87%AA%E9%80%82%E5%BA%94%EF%BC%9A"><span class="nav-text">左列固定右列自适应：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A6%E5%8F%B3%E5%AE%BD%E5%BA%A6%E5%9B%BA%E5%AE%9A%EF%BC%8C%E4%B8%AD%E9%97%B4%E5%AE%BD%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94"><span class="nav-text">左右宽度固定，中间宽度自适应</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80"><span class="nav-text">圣杯布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%92%E5%AD%90%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="nav-text">盒子水平垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80"><span class="nav-text">移动端布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80"><span class="nav-text">响应式布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80%EF%BC%88%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80%EF%BC%89"><span class="nav-text">流式布局（百分比布局）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rem%E5%B8%83%E5%B1%80"><span class="nav-text">rem布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vw-vh%E5%B8%83%E5%B1%80"><span class="nav-text">vw&#x2F;vh布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex%E5%B8%83%E5%B1%80"><span class="nav-text">flex布局</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E5%AE%9E%E7%8E%B0%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="nav-text">CSS实现三角形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9D%97%E5%85%83%E7%B4%A0%E5%92%8C%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0"><span class="nav-text">块元素和行内元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%97%E5%85%83%E7%B4%A0"><span class="nav-text">块元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0"><span class="nav-text">行内元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Javascript"><span class="nav-text">Javascript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#var-let-const%E5%8C%BA%E5%88%AB"><span class="nav-text">var let const区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87"><span class="nav-text">JS变量提升</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">JS数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E8%B4%A8%E5%8C%BA%E5%88%AB"><span class="nav-text">本质区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD"><span class="nav-text">类型判断</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95"><span class="nav-text">数组去重方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F"><span class="nav-text">数组排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86%E6%96%B9%E6%B3%95"><span class="nav-text">数组遍历方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E6%B1%87%E6%80%BB"><span class="nav-text">数组方法汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%94%B9%E5%8F%98%E5%8E%9F%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-text">不改变原数组的方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%B9%E5%8F%98%E5%8E%9F%E6%95%B0%E7%BB%84%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-text">改变原数组的方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find%E5%92%8Cfilter%E5%8C%BA%E5%88%AB"><span class="nav-text">find和filter区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84"><span class="nav-text">伪数组和数组?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AA%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="nav-text">伪数组和数组区别：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%B8%B8%E8%A7%81%E5%9C%BA%E6%99%AF"><span class="nav-text">伪数组的常见场景:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AA%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%95%B0%E7%BB%84"><span class="nav-text">伪数组转换为数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E5%8F%98%E9%87%8F%E6%98%AF%E5%90%A6%E4%B8%BA%E6%95%B0%E7%BB%84%EF%BC%9F"><span class="nav-text">判断变量是否为数组？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95"><span class="nav-text">字符串方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81-%E8%A2%8B%E9%BC%A0%E4%BA%91%E7%AC%94%E8%AF%95"><span class="nav-text">防抖和节流(袋鼠云笔试)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E9%97%AD%E5%8C%85"><span class="nav-text">js闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6-%E8%A2%8B%E9%BC%A0%E4%BA%91%E7%AC%94%E8%AF%95"><span class="nav-text">JS垃圾回收机制(袋鼠云笔试)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this%E6%8C%87%E5%90%91"><span class="nav-text">this指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF"><span class="nav-text">事件循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="nav-text">宏任务微任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="nav-text">原型和原型链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="nav-text">事件委托</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E6%89%A9%E5%B1%95%E7%AC%A6%E7%94%A8%E8%BF%87%E5%90%97-%E2%80%A6"><span class="nav-text">事件扩展符用过吗(…)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0%E5%92%8Carguments%E5%AF%B9%E8%B1%A1"><span class="nav-text">剩余参数和arguments对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="nav-text">浅拷贝和深拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-text">浅拷贝实现方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-text">深拷贝实现方法：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http%E8%AF%B7%E6%B1%82%EF%BC%9F"><span class="nav-text">http请求？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http%E7%8A%B6%E6%80%81%E7%A0%81%EF%BC%9F"><span class="nav-text">http状态码？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87"><span class="nav-text">http请求报文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87"><span class="nav-text">http响应报文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http%E5%92%8Chttps%E5%8D%8F%E8%AE%AE"><span class="nav-text">http和https协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie%E3%80%81localStorage%E3%80%81sessionStorage%E7%9A%84%E5%8C%BA%E5%88%AB-%E8%A2%8B%E9%BC%A0%E4%BA%91%E7%AC%94%E8%AF%95"><span class="nav-text">cookie、localStorage、sessionStorage的区别(袋鼠云笔试)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#token"><span class="nav-text">token</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E6%98%AF%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E7%9A%84"><span class="nav-text">后台管理系统中的权限管理是怎么实现的?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9A"><span class="nav-text">应用场景：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="nav-text">缺点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81%EF%BC%9A"><span class="nav-text">三种状态：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%B3%95%EF%BC%9A"><span class="nav-text">用法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-text">Promise的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#async%E5%92%8Cawait%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">async和await的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise%E9%9D%A2%E8%AF%95%E9%A2%98%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%E7%9A%84%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C%E6%98%AF%EF%BC%9F"><span class="nav-text">Promise面试题以下代码的执行结果是？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E6%98%BE%E7%A4%BA%E5%AE%8C%E6%88%90%EF%BC%8C%E8%BF%99%E4%B8%AA%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%83%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88"><span class="nav-text">一个页面从输入URL到页面加载显示完成，这个过程中都发生了什么?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%A8%E5%9F%9F%E6%98%AF%E4%BB%80%E4%B9%88-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="nav-text">跨域是什么? 如何解决跨域问题?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88"><span class="nav-text">项目性能优化方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD"><span class="nav-text">图片懒加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E6%B5%8F%E8%A7%88%E5%99%A8url%E4%B8%AD%E6%9F%A5%E8%AF%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%8F%82%E6%95%B0"><span class="nav-text">获取浏览器url中查询字符串的参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set%E5%92%8CMap"><span class="nav-text">Set和Map</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-text">Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set"><span class="nav-text">Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map%E5%92%8CSet%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="nav-text">Map和Set区别：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS%E8%8E%B7%E5%8F%96DOM%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">JS获取DOM元素的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="nav-text">HTML5自定义属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="nav-text">节点操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#websocket%E5%92%8Chttp"><span class="nav-text">websocket和http</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript%E7%9A%84%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0"><span class="nav-text">JavaScript的全局函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue"><span class="nav-text">Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MVC%E5%92%8CMVVM%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">MVC和MVVM的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue2-0-%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E4%B8%8E%E7%BC%BA%E9%99%B7"><span class="nav-text">Vue2.0 响应式原理与缺陷?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86"><span class="nav-text">Vue双向数据绑定原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue%E4%B8%AD%E4%B8%BA%E4%BB%80%E4%B9%88%E6%95%B0%E6%8D%AE%E5%8F%98%E4%BA%86%EF%BC%8C%E8%A7%86%E5%9B%BE%E6%B2%A1%E5%8F%98%EF%BC%9F"><span class="nav-text">Vue中为什么数据变了，视图没变？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue%E4%B8%AD%E7%9A%84data%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%EF%BC%9F%EF%BC%88%E9%9D%A2%E8%AF%95%E5%B8%B8%E9%97%AE%EF%BC%89"><span class="nav-text">vue中的data为什么是一个函数？（面试常问）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vuex%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E6%AF%8F%E4%B8%AA%E5%B1%9E%E6%80%A7%E6%98%AF%E5%B9%B2%E5%98%9B%E7%9A%84"><span class="nav-text">Vuex是什么，每个属性是干嘛的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-%E8%A2%8B%E9%BC%A0%E4%BA%91%E7%AC%94%E8%AF%95"><span class="nav-text">生命周期(袋鼠云笔试)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#beforeCreate%EF%BC%88%E5%88%9B%E5%BB%BA%E5%89%8D%EF%BC%89"><span class="nav-text">beforeCreate（创建前）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#created%EF%BC%88%E5%88%9B%E5%BB%BA%E5%90%8E%EF%BC%89"><span class="nav-text">created（创建后）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#beforeMount%EF%BC%88%E6%8C%82%E8%BD%BD%E5%89%8D%EF%BC%89"><span class="nav-text">beforeMount（挂载前）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mounted%EF%BC%88%E6%8C%82%E8%BD%BD%E5%90%8E%EF%BC%89"><span class="nav-text">mounted（挂载后）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#beforeUpdate%EF%BC%88%E6%9B%B4%E6%96%B0%E5%89%8D%EF%BC%89"><span class="nav-text">beforeUpdate（更新前）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#updated%EF%BC%88%E6%9B%B4%E6%96%B0%E5%90%8E%EF%BC%89"><span class="nav-text">updated（更新后）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#beforeDestroy%EF%BC%88%E9%94%80%E6%AF%81%E5%89%8D%EF%BC%89"><span class="nav-text">beforeDestroy（销毁前）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#destroyed%EF%BC%88%E9%94%80%E6%AF%81%E5%90%8E%EF%BC%89"><span class="nav-text">destroyed（销毁后）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-if%E5%92%8Cv-show%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">v-if和v-show的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scoped%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86"><span class="nav-text">scoped相关知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#v-for%E6%9B%B4%E6%96%B0%E7%9B%91%E6%B5%8B"><span class="nav-text">v-for更新监测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%8C%85%E5%90%8Edist%E7%9B%AE%E5%BD%95%E8%BF%87%E5%A4%A7%EF%BC%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%EF%BC%9F"><span class="nav-text">打包后dist目录过大，解决办法？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#watch%E5%92%8Ccomputed%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">watch和computed的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92"><span class="nav-text">vue组件之间的数据传递</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%B6%E7%BB%84%E4%BB%B6%E7%BB%99%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="nav-text">父组件给子组件传递数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6%E7%BB%99%E7%88%B6%E7%BB%84%E4%BB%B6%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE"><span class="nav-text">子组件给父组件传递数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E7%BB%84%E4%BB%B6%E9%9C%80%E8%A6%81%E8%B0%83%E7%94%A8%E7%88%B6%E7%BB%84%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">子组件需要调用父组件的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%B6%E7%BB%84%E4%BB%B6%E8%B0%83%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E6%96%B9%E6%B3%95"><span class="nav-text">父组件调用子组件方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E5%87%86%E5%A4%87%EF%BC%88%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7%EF%BC%9Agit-svn%EF%BC%89"><span class="nav-text">管理准备（项目代码版本管理工具：git&#x2F;svn）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%981%EF%BC%9A%E6%96%B0%E6%97%A7%E9%A1%B9%E7%9B%AE%EF%BC%8C%E7%A1%AE%E4%BF%9D%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%87%E4%BB%B6%E5%A4%B9%EF%BC%9F"><span class="nav-text">问题1：新旧项目，确保有什么文件夹？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%BF%E5%88%B0%E9%A1%B9%E7%9B%AE"><span class="nav-text">拿到项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E9%A1%B9%E7%9B%AE"><span class="nav-text">推送项目</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E5%91%BD%E4%BB%A4"><span class="nav-text">git命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%88%86%E6%94%AF%E6%98%8E%E7%BB%86"><span class="nav-text">1.分支明细</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%86%E6%94%AF%E5%91%BD%E4%BB%A4"><span class="nav-text">2.分支命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%9A%82%E6%97%B6%E4%BF%9D%E5%AD%98%E6%9B%B4%E6%94%B9"><span class="nav-text">3.暂时保存更改</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-text">Vue修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this-nextTick"><span class="nav-text">this.$nextTick()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="nav-text">使用原理：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-text">使用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#route%E5%92%8C-router"><span class="nav-text">$route和$router</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#route"><span class="nav-text">$route</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#router"><span class="nav-text">$router</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue%E4%B8%ADhash%E5%92%8Chistory%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">Vue中hash和history的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="nav-text">单向数据流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue%E4%B8%AD%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-text">Vue中父子组件生命周期</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-text">Vue面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue%E4%B8%ADkeep-alive%E7%BB%84%E4%BB%B6%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-text">vue中keep-alive组件的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%EF%BC%9A%EF%BC%88%E4%B8%8B%E9%9D%A2%E7%9A%84%E5%86%99%E6%B3%95%E6%98%AF%E5%B0%86%E7%BB%84%E4%BB%B6%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E8%BF%9B%E8%A1%8C%E7%BC%93%E5%AD%98%EF%BC%89"><span class="nav-text">实际应用：（下面的写法是将组件在内存中进行缓存）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#include-%E5%92%8C-exclude-%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">include 和 exclude 属性的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue%E4%B8%AD%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E5%8F%AF%E5%A4%8D%E7%94%A8%E7%9A%84%E7%BB%84%E4%BB%B6"><span class="nav-text">Vue中如何编写可复用的组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E9%9D%9E%E5%B7%A5%E7%A8%8B%E5%8C%96%E9%A1%B9%E7%9B%AE%EF%BC%8C%E7%BD%91%E9%80%9F%E6%85%A2%E6%97%B6%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B5%E9%9D%A2%E9%97%AA%E5%8A%A8%E9%97%AE%E9%A2%98"><span class="nav-text">如何解决非工程化项目，网速慢时初始化页面闪动问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A"><span class="nav-text">组件之间双向绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scoped-CSS%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-text">Scoped CSS的原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB"><span class="nav-text">区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%81-deep-%E3%80%81-v-deep%E6%B7%B1%E5%BA%A6%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-text">&gt;&gt;&gt;、&#x2F;deep&#x2F;、::v-deep深度选择器的原理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E6%A0%87%E6%85%A7%E5%AE%89"><span class="nav-text">中标慧安</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E8%AE%BE%E7%BD%AE6px%E5%A4%A7%E5%B0%8F%EF%BC%9F"><span class="nav-text">怎么设置6px大小？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%BA%A2%E5%87%BA%E6%98%BE%E7%A4%BA%E7%9C%81%E7%95%A5%E5%8F%B7"><span class="nav-text">文字溢出显示省略号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA"><span class="nav-text">单行文本溢出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA"><span class="nav-text">多行文本溢出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css%E5%AE%9E%E7%8E%B0%E4%B8%89%E8%A7%92%E5%BD%A2"><span class="nav-text">css实现三角形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8"><span class="nav-text">清除浮动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html5%E6%96%B0%E5%A2%9E%E4%BA%86%E4%BB%80%E4%B9%88"><span class="nav-text">html5新增了什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE"><span class="nav-text">语义化标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webStorage-%E5%82%A8%E5%AD%98%E6%9C%BA%E5%88%B6-sessionStorage-%E5%92%8C-localStorage"><span class="nav-text">webStorage 储存机制 sessionStorage 和 localStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history-%E5%AF%B9%E8%B1%A1"><span class="nav-text">history 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0input%E6%96%B0%E5%A2%9E%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-text">表单元素input新增的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%AA%92%E4%BD%93"><span class="nav-text">多媒体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E4%BA%8E%E7%BB%98%E7%94%BB%E7%9A%84-canvas"><span class="nav-text">用于绘画的 canvas</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">css隐藏元素的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack%E7%83%AD%E6%9B%B4%E6%96%B0"><span class="nav-text">webpack热更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E5%88%B0%E7%9A%84webpack%E5%B1%9E%E6%80%A7"><span class="nav-text">用到的webpack属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE-1"><span class="nav-text">原型和原型链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="nav-text">vue组件通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8git%E5%91%BD%E4%BB%A4"><span class="nav-text">常用git命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E4%BB%A3%E7%A0%81%E6%8E%A8%E9%80%81%E8%87%B3master%E4%B8%BB%E5%88%86%E6%94%AF"><span class="nav-text">将代码推送至master主分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-%E6%8A%8Amaster%E5%88%86%E6%94%AF%E4%BB%A3%E7%A0%81%E5%90%88%E5%B9%B6%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E5%88%86%E6%94%AF"><span class="nav-text">git 把master分支代码合并到自己的分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for%E5%92%8CforEach%E5%A6%82%E4%BD%95%E4%B8%AD%E6%96%AD%E5%BE%AA%E7%8E%AF"><span class="nav-text">for和forEach如何中断循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue%E4%B8%ADwatch%E5%92%8Ccomputed%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">vue中watch和computed的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RBAC%E6%9D%83%E9%99%90%E8%AE%BE%E8%AE%A1"><span class="nav-text">RBAC权限设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-1"><span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81%EF%BC%9A-1"><span class="nav-text">三种状态：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%B3%95%EF%BC%9A-1"><span class="nav-text">用法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-text">优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6%E6%96%B0%E5%A2%9E"><span class="nav-text">ES6新增</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%8C%85"><span class="nav-text">闭包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E6%B2%A9%E7%A7%91%E6%8A%80"><span class="nav-text">小沩科技</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87-1"><span class="nav-text">http请求报文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87-1"><span class="nav-text">http响应报文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#https"><span class="nav-text">https</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#https%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87%EF%BC%9A"><span class="nav-text">https设计目标：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#https%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="nav-text">https优点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#https%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="nav-text">https缺点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http%E5%92%8Chttps%E5%8C%BA%E5%88%AB"><span class="nav-text">http和https区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http%E8%AF%B7%E6%B1%82"><span class="nav-text">http请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="nav-text">进程和线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2"><span class="nav-text">内存泄露</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E8%B5%B7%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E7%9A%84%E5%8E%9F%E5%9B%A0%EF%BC%9A"><span class="nav-text">引起内存泄漏的原因：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue%E4%B8%AD%E5%AE%B9%E6%98%93%E5%87%BA%E7%8E%B0%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E7%9A%84%E5%87%A0%E7%A7%8D%E6%83%85%E5%86%B5"><span class="nav-text">vue中容易出现内存泄漏的几种情况</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9E%E5%B8%86%E7%A7%91%E6%8A%80"><span class="nav-text">连帆科技</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%E5%92%8C%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">匿名函数和箭头函数的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="nav-text">匿名函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0-1"><span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="nav-text">区别：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this%E7%9A%84%E6%8C%87%E5%90%91"><span class="nav-text">this的指向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E5%8F%98this%E7%9A%84%E6%8C%87%E5%90%91"><span class="nav-text">改变this的指向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#call"><span class="nav-text">call</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply"><span class="nav-text">apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bind"><span class="nav-text">bind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E5%88%AB%EF%BC%9A-1"><span class="nav-text">区别：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="nav-text">翻转链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%A8sum%E5%87%BD%E6%95%B0"><span class="nav-text">补全sum函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE"><span class="nav-text">实现一个按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6%E6%96%B0%E5%A2%9E%E4%BA%86%E4%BB%80%E4%B9%88"><span class="nav-text">ES6新增了什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Symbol"><span class="nav-text">Symbol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#var%E3%80%81let%E5%92%8Cconst"><span class="nav-text">var、let和const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC"><span class="nav-text">解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set%E5%92%8CMap-1"><span class="nav-text">Set和Map</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-2"><span class="nav-text">Promise</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%9B%E4%BD%9B%E8%BD%AF%E4%BB%B6%E7%AC%94%E8%AF%95"><span class="nav-text">笛佛软件笔试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%AA%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8D%E8%83%BD%E8%A2%ABfor%E2%80%A6of%E2%80%A6%E9%81%8D%E5%8E%86"><span class="nav-text">哪些数据结构不能被for…of…遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E5%B1%9E%E6%80%A7%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F"><span class="nav-text">CSS属性书写顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS%E8%8E%B7%E5%8F%96%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7key%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">JS获取对象属性key的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0"><span class="nav-text">JS全局函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%9B%E4%BD%9B%E8%BD%AF%E4%BB%B6%E9%9D%A2%E8%AF%95"><span class="nav-text">笛佛软件面试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#window%E7%9A%84onload%E4%BA%8B%E4%BB%B6"><span class="nav-text">window的onload事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#window%E5%AF%B9%E8%B1%A1%E5%B8%B8%E8%A7%81%E4%BA%8B%E4%BB%B6"><span class="nav-text">window对象常见事件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BOM%E5%92%8CDOM"><span class="nav-text">BOM和DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#location%E5%AF%B9%E8%B1%A1"><span class="nav-text">location对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#navigation%E5%AF%B9%E8%B1%A1"><span class="nav-text">navigation对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history%E5%AF%B9%E8%B1%A1"><span class="nav-text">history对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#computed%E5%92%8Cwatch%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">computed和watch的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-text">js事件委托的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8A%82%E6%B5%81%E5%92%8C%E9%98%B2%E6%8A%96"><span class="nav-text">节流和防抖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B2%E6%8A%96"><span class="nav-text">防抖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E6%B5%81"><span class="nav-text">节流</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB"><span class="nav-text">路由导航守卫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E5%89%8D%E7%BD%AE%E5%AE%88%E5%8D%AB"><span class="nav-text">路由前置守卫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E5%90%8E%E7%BD%AE%E5%AE%88%E5%8D%AB"><span class="nav-text">路由后置守卫</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="nav-text">拦截器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="nav-text">请求拦截器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%93%8D%E5%BA%94%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="nav-text">响应拦截器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E9%92%AE%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="nav-text">按钮的权限管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E6%A8%A1%E5%BC%8F%E5%8C%BA%E5%88%AB"><span class="nav-text">路由模式区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E4%B8%AD%E5%BC%8F%E5%92%8C%E5%88%86%E5%B8%83%E5%BC%8F%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D"><span class="nav-text">集中式和分布式是什么意思</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-stash"><span class="nav-text">git stash</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E9%9A%BE%E7%82%B9"><span class="nav-text">项目难点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%A1%B9%E7%9B%AE"><span class="nav-text">移动端项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E7%BC%93%E5%AD%98"><span class="nav-text">组件缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B4%E5%83%8F%E5%92%8C%E5%A7%93%E5%90%8D%E4%BC%98%E5%8C%96"><span class="nav-text">头像和姓名优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E6%9C%AA%E9%81%82%E9%A1%B5%E9%9D%A2-%E5%88%B7%E6%96%B0token"><span class="nav-text">登录未遂页面&#x2F;刷新token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E9%A1%B5-%E4%BF%9D%E5%AD%98%E6%BB%9A%E5%8A%A8%E6%9D%A1%E4%BD%8D%E7%BD%AE"><span class="nav-text">首页-保存滚动条位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%91%E9%81%93%E5%88%87%E6%8D%A2%E6%BB%9A%E5%8A%A8%E4%BD%8D%E7%BD%AE%E4%BF%9D%E5%AD%98"><span class="nav-text">频道切换滚动位置保存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%BA%E8%B5%84%E9%A1%B9%E7%9B%AE"><span class="nav-text">人资项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6"><span class="nav-text">页面访问权限控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E9%92%AE%E6%93%8D%E4%BD%9C%E6%9D%83%E9%99%90"><span class="nav-text">按钮操作权限</span></a></li></ol></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">chengj-code</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        5 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>

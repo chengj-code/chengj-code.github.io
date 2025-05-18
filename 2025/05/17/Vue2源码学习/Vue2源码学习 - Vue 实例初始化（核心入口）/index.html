@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="chengj-code">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2025/05/17/vue2源码学习/vue2源码学习 - vue 实例初始化（核心入口）/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue2源码学习 - Vue 实例初始化（核心入口）">
+<meta property="og:url" content="http://example.com/2025/05/17/Vue2%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/Vue2%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%20-%20Vue%20%E5%AE%9E%E4%BE%8B%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88%E6%A0%B8%E5%BF%83%E5%85%A5%E5%8F%A3%EF%BC%89/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
+<meta property="article:published_time" content="2025-05-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-18T14:07:10.656Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="学习, v2.7.16">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/redefine-favicon.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/redefine-favicon.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/redefine-favicon.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Vue2源码学习 - Vue 实例初始化（核心入口） | chengj-code的博客
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"chengj-code的博客","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"}},"search":{"enable":false,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                chengj-code的博客
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">1</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="/images/default-thumbnail.jpg" alt="Vue2源码学习 - Vue 实例初始化（核心入口）" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">Vue2源码学习 - Vue 实例初始化（核心入口）</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/redefine-avatar.svg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">chengj-code</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-05-17</span>
+        <span class="mobile">2025-05-17</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-05-18 22:07:10</span>
+            <span class="mobile">2025-05-18 22:07:10</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0-v2-7-16/">学习, v2.7.16</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="Vue2源码解读顺序"><a href="#Vue2源码解读顺序" class="headerlink" title="Vue2源码解读顺序"></a>Vue2源码解读顺序</h1><ol>
+<li>从入口开始：先理解 <code>new Vue()</code> 的实例化过程，掌握生命周期和初始化流程。</li>
+<li>深入响应式：研究 <code>Observer</code>、<code>Dep</code>、<code>Watcher</code> 的协作机制，理解数据绑定原理。</li>
+<li>模板编译：分析模板如何转换为 <code>render</code> 函数，了解 AST 优化策略。</li>
+<li>虚拟 DOM：学习 VNode 结构与 Diff 算法，掌握高效 DOM 更新的实现。</li>
+<li>扩展功能：最后阅读组件系统、插件机制等高级特性，完善对框架整体的理解。</li>
+</ol>
+<h1 id="Vue-实例初始化（核心入口）"><a href="#Vue-实例初始化（核心入口）" class="headerlink" title="Vue 实例初始化（核心入口）"></a>Vue 实例初始化（核心入口）</h1><ul>
+<li><strong>关键文件</strong>：<code>src/core/instance/index.js</code>、<code>src/core/instance/init.js</code></li>
+<li><strong>核心逻辑</strong>：<ul>
+<li><strong>构造函数</strong>：通过 <code>new Vue()</code> 创建实例时，调用 <code>this._init(options)</code> 初始化配置项，合并选项（如 <code>data</code>、<code>methods</code>、生命周期钩子等）。</li>
+<li><strong>Mixin 扩展</strong>：通过 <code>initMixin</code>、<code>stateMixin</code> 等函数在原型链上挂载 <code>$data</code>、<code>$watch</code>、<code>$set</code> 等实例方法。</li>
+<li><strong>生命周期初始化</strong>：依次调用 <code>initLifecycle</code>、<code>initEvents</code>、<code>initRender</code> 等函数，触发 <code>beforeCreate</code> 和 <code>created</code> 钩子。</li>
+</ul>
+</li>
+</ul>
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p><strong>关键文件</strong>：<code>src/core/instance/index.js</code>、<code>src/core/instance/init.js</code></p>
+<p>在<code>initMixin</code>方法中给Vue实例上挂载了<code>_init</code>方法，通过 <code>new Vue()</code> 创建实例时，调用 <code>this._init(options)</code> 初始化配置项。</p>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Vue</span>(<span class="params">options</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (__DEV__ &amp;&amp; !(<span class="variable language_">this</span> <span class="keyword">instanceof</span> <span class="title class_">Vue</span>)) &#123;</span><br><span class="line">    <span class="title function_">warn</span>(<span class="string">&#x27;Vue is a constructor and should be called with the `new` keyword&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">_init</span>(options)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过多个 Mixin 函数向 Vue 原型挂载核心方法</span></span><br><span class="line"><span class="title function_">initMixin</span>(<span class="title class_">Vue</span>)       <span class="comment">// 注入 _init 方法</span></span><br><span class="line"><span class="title function_">stateMixin</span>(<span class="title class_">Vue</span>)      <span class="comment">// 注入 $data/$props/$set/$delete/$watch</span></span><br><span class="line"><span class="title function_">eventsMixin</span>(<span class="title class_">Vue</span>)     <span class="comment">// 注入 $on/$once/$off/$emit</span></span><br><span class="line"><span class="title function_">lifecycleMixin</span>(<span class="title class_">Vue</span>)  <span class="comment">// 注入 _update/$forceUpdate/$destroy</span></span><br><span class="line"><span class="title function_">renderMixin</span>(<span class="title class_">Vue</span>)     <span class="comment">// 注入 $nextTick/_render 等</span></span><br></pre></td></tr></table></figure></div>
+
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initMixin</span>(<span class="params">Vue: <span class="keyword">typeof</span> Component</span>) &#123;</span><br><span class="line">  <span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">_init</span> = <span class="keyword">function</span> (<span class="params">options?: Record&lt;string, any&gt;</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="attr">vm</span>: <span class="title class_">Component</span> = <span class="variable language_">this</span></span><br><span class="line">    vm.<span class="property">_uid</span> = uid++ <span class="comment">// 为每个 Vue 实例分配唯一的递增 ID (_uid)，用于调试或追踪实例。</span></span><br><span class="line">    <span class="keyword">let</span> startTag, endTag</span><br><span class="line">    <span class="keyword">if</span> (__DEV__ &amp;&amp; config.<span class="property">performance</span> &amp;&amp; mark) &#123;</span><br><span class="line">      startTag = <span class="string">`vue-perf-start:<span class="subst">$&#123;vm._uid&#125;</span>`</span></span><br><span class="line">      endTag = <span class="string">`vue-perf-end:<span class="subst">$&#123;vm._uid&#125;</span>`</span></span><br><span class="line">      <span class="title function_">mark</span>(startTag)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 作用：在开发环境下，若启用了性能监控（config.performance），则使用 mark 记录实例初始化的起始时间点。</span></span><br><span class="line">    vm.<span class="property">_isVue</span> = <span class="literal">true</span> <span class="comment">// 作用：标记当前对象为 Vue 实例，避免被响应式系统观测（例如在 data 中返回 Vue 实例时跳过劫持）。</span></span><br><span class="line">    vm.<span class="property">__v_skip</span> = <span class="literal">true</span> <span class="comment">// 作用：显式声明该对象跳过响应式处理（Vue 内部优化逻辑）。</span></span><br><span class="line">    vm.<span class="property">_scope</span> = <span class="keyword">new</span> <span class="title class_">EffectScope</span>(<span class="literal">true</span> <span class="comment">/* detached */</span>)</span><br><span class="line">    vm.<span class="property">_scope</span>.<span class="property">parent</span> = <span class="literal">undefined</span></span><br><span class="line">    vm.<span class="property">_scope</span>.<span class="property">_vm</span> = <span class="literal">true</span></span><br><span class="line">    <span class="comment">// 作用：创建一个独立的副作用作用域 (EffectScope)，用于管理该实例的响应式副作用（如 watch、computed）。</span></span><br><span class="line">         <span class="comment">// detached: true 表示该作用域不继承父级作用域。</span></span><br><span class="line">         <span class="comment">// _vm = true 标记该作用域与 Vue 实例关联。</span></span><br><span class="line">    <span class="comment">// merge options</span></span><br><span class="line">    <span class="keyword">if</span> (options &amp;&amp; options.<span class="property">_isComponent</span>) &#123;</span><br><span class="line">      <span class="title function_">initInternalComponent</span>(vm, options <span class="keyword">as</span> any)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      vm.<span class="property">$options</span> = <span class="title function_">mergeOptions</span>(</span><br><span class="line">        <span class="title function_">resolveConstructorOptions</span>(vm.<span class="property">constructor</span> <span class="keyword">as</span> any),</span><br><span class="line">        options || &#123;&#125;,</span><br><span class="line">        vm</span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 作用：合并构造函数选项（如全局混入的选项）和实例化时传入的选项。</span></span><br><span class="line">    <span class="comment">// 内部组件优化：若为内部组件（如通过 &lt;component&gt; 创建的组件），直接快速合并选项（initInternalComponent）。</span></span><br><span class="line">    <span class="comment">// 普通组件：通过 mergeOptions 递归合并构造函数的默认选项（resolveConstructorOptions）和用户传入的 options。</span></span><br><span class="line">    <span class="keyword">if</span> (__DEV__) &#123;</span><br><span class="line">      <span class="title function_">initProxy</span>(vm)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      vm.<span class="property">_renderProxy</span> = vm</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 作用：在开发环境下，通过initProxy设置实例的渲染代理（拦截模板中未定义的属性访问并警告）；生产环境直接使用实例自身作为代理。</span></span><br><span class="line">    vm.<span class="property">_self</span> = vm <span class="comment">// 作用：保留实例自身的原始引用，避免代理后的对象干扰内部逻辑。</span></span><br><span class="line">    <span class="title function_">initLifecycle</span>(vm) <span class="comment">// 初始化实例的父子组件关系、$parent、$children 等属性。</span></span><br><span class="line">    <span class="title function_">initEvents</span>(vm) <span class="comment">// 初始化自定义事件监听（如 $on, $emit）。</span></span><br><span class="line">    <span class="title function_">initRender</span>(vm) <span class="comment">// 初始化插槽 ($slots)、$createElement 渲染函数等。</span></span><br><span class="line">    <span class="title function_">callHook</span>(vm, <span class="string">&#x27;beforeCreate&#x27;</span>, <span class="literal">undefined</span>, <span class="literal">false</span> <span class="comment">/* setContext */</span>) <span class="comment">// 触发 beforeCreate 生命周期钩子，此时数据观测 (data)、事件等尚未初始化。</span></span><br><span class="line">    <span class="title function_">initInjections</span>(vm) <span class="comment">// 在数据/属性初始化前解析父级提供的依赖注入 (inject)。</span></span><br><span class="line">    <span class="title function_">initState</span>(vm) <span class="comment">// 按顺序初始化 props → methods → data → computed → watch，建立响应式系统。</span></span><br><span class="line">    <span class="title function_">initProvide</span>(vm) <span class="comment">// 在数据/属性初始化后提供值给子组件 (provide)</span></span><br><span class="line">    <span class="title function_">callHook</span>(vm, <span class="string">&#x27;created&#x27;</span>) <span class="comment">// 作用：触发 created 生命周期钩子，此时数据观测已完成，但 DOM 尚未挂载。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* istanbul ignore if */</span></span><br><span class="line">    <span class="keyword">if</span> (__DEV__ &amp;&amp; config.<span class="property">performance</span> &amp;&amp; mark) &#123;</span><br><span class="line">      vm.<span class="property">_name</span> = <span class="title function_">formatComponentName</span>(vm, <span class="literal">false</span>)</span><br><span class="line">      <span class="title function_">mark</span>(endTag)</span><br><span class="line">      <span class="title function_">measure</span>(<span class="string">`vue <span class="subst">$&#123;vm._name&#125;</span> init`</span>, startTag, endTag)</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">// 作用：在开发环境下，记录实例初始化的耗时，并通过 measure 输出性能数据。</span></span><br><span class="line">    <span class="keyword">if</span> (vm.<span class="property">$options</span>.<span class="property">el</span>) &#123;</span><br><span class="line">      vm.$mount(vm.<span class="property">$options</span>.<span class="property">el</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 作用：如果选项中有 el 属性，则自动调用 $mount 方法挂载实例到 DOM。</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="合并构造函数选项"><a href="#合并构造函数选项" class="headerlink" title="合并构造函数选项"></a>合并构造函数选项</h3><h4 id="initInternalComponent"><a href="#initInternalComponent" class="headerlink" title="initInternalComponent"></a>initInternalComponent</h4><ul>
+<li><p><strong>避免深拷贝</strong>：动态组件的创建频繁且需要高效处理。通过原型继承，子组件可以直接复用父组件的配置选项（如生命周期钩子、方法等），避免了深拷贝父组件选项的开销。</p>
+</li>
+<li><p><strong>共享不可变属性</strong>：原型链上的方法或静态配置（如 <code>methods</code> 中的函数）无需每个实例单独存储，减少了内存占用。</p>
+</li>
+<li><p><strong>原型链继承选项</strong>：Vue 在初始化组件时，会将子组件的 <code>options</code> 对象通过 <code>Object.create(parentOptions)</code> 设置为父选项的原型。这样，子组件能自动继承父组件的默认配置。</p>
+</li>
+<li><p><strong>按需覆盖</strong>：子组件只需定义需要覆盖的选项（如 <code>data</code>、<code>props</code>），未定义的选项通过原型链查找父组件的配置，简化了选项合并逻辑。</p>
+</li>
+<li><p><strong>复用响应式结构</strong>：Vue 的响应式系统（如观察者模式）依赖选项的结构。通过原型共享，可以复用已处理的响应式描述符，减少重复的 <code>Object.defineProperty</code> 调用。</p>
+</li>
+<li><p><strong>构造函数复用</strong>：Vue 组件本质上是基于 <code>Vue</code> 构造函数的扩展。通过 <code>initInternalComponent</code> 设置原型，确保子组件的实例继承 <code>Vue.prototype</code> 上的核心方法（如 <code>$emit</code>、<code>$watch</code>），保持行为一致性。</p>
+</li>
+</ul>
+<p><strong>核心作用</strong>：优化内部组件（如动态组件 <code>&lt;component :is=&quot;...&quot;&gt;</code>）的初始化性能，通过原型继承和直接赋值跳过动态选项合并，快速构建 <code>vm.$options</code></p>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initInternalComponent</span>(<span class="params"></span></span><br><span class="line"><span class="params">  vm: Component,</span></span><br><span class="line"><span class="params">  options: InternalComponentOptions</span></span><br><span class="line"><span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 基于构造函数的 options 创建原型链继承的对象，避免深拷贝</span></span><br><span class="line">  <span class="keyword">const</span> opts = (vm.<span class="property">$options</span> = <span class="title class_">Object</span>.<span class="title function_">create</span>((vm.<span class="property">constructor</span> <span class="keyword">as</span> any).<span class="property">options</span>));</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 直接从父级 VNode 和组件选项中快速赋值，避免动态枚举性能开销</span></span><br><span class="line">  <span class="keyword">const</span> parentVnode = options.<span class="property">_parentVnode</span>;</span><br><span class="line">  opts.<span class="property">parent</span> = options.<span class="property">parent</span>;          <span class="comment">// 父组件实例</span></span><br><span class="line">  opts.<span class="property">_parentVnode</span> = parentVnode;       <span class="comment">// 父级 VNode 节点</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 从父 VNode 的组件选项中提取关键数据</span></span><br><span class="line">  <span class="keyword">const</span> vnodeComponentOptions = parentVnode.<span class="property">componentOptions</span>!;</span><br><span class="line">  opts.<span class="property">propsData</span> = vnodeComponentOptions.<span class="property">propsData</span>;      <span class="comment">// 父组件传递的 props 数据</span></span><br><span class="line">  opts.<span class="property">_parentListeners</span> = vnodeComponentOptions.<span class="property">listeners</span>; <span class="comment">// 父组件监听的事件</span></span><br><span class="line">  opts.<span class="property">_renderChildren</span> = vnodeComponentOptions.<span class="property">children</span>;   <span class="comment">// 子节点（插槽内容）</span></span><br><span class="line">  opts.<span class="property">_componentTag</span> = vnodeComponentOptions.<span class="property">tag</span>;         <span class="comment">// 组件标签名</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如果父级传递了自定义 render 函数，直接覆盖默认选项</span></span><br><span class="line">  <span class="keyword">if</span> (options.<span class="property">render</span>) &#123;</span><br><span class="line">    opts.<span class="property">render</span> = options.<span class="property">render</span>;                <span class="comment">// 自定义渲染函数</span></span><br><span class="line">    opts.<span class="property">staticRenderFns</span> = options.<span class="property">staticRenderFns</span>; <span class="comment">// 静态渲染函数（优化用）</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="resolveConstructorOptions"><a href="#resolveConstructorOptions" class="headerlink" title="resolveConstructorOptions"></a>resolveConstructorOptions</h4><ul>
+<li><strong>动态更新父类选项</strong>：当父类选项被动态修改时，子类能感知并重新合并选项。</li>
+<li><strong>处理子类自身修改</strong>：合并子类在 <code>extend</code> 后可能被手动修改的选项。</li>
+<li><strong>保证选项一致性</strong>：确保组件实例的配置是最新且正确的，避免因缓存旧选项导致的意外行为。</li>
+<li><strong>支持递归组件</strong>：自动注册组件名称，便于模板中的递归调用。</li>
+</ul>
+<p>当通过 <code>Vue.extend</code> 创建子类构造函数时，子类会继承父类的选项。但父类的选项可能在运行时被动态修改（例如通过 <code>Vue.mixin</code> 或直接修改全局配置）。此时，子类需要感知父类选项的变化并重新合并自己的选项，否则可能使用过时的配置。<code>resolveConstructorOptions</code> 会递归检查父类构造函数的选项，确保每一层父类的选项都是最新的。</p>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">resolveConstructorOptions</span>(<span class="params">Ctor: <span class="keyword">typeof</span> Component</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> options = <span class="title class_">Ctor</span>.<span class="property">options</span>;</span><br><span class="line">  <span class="comment">// 递归处理父类（通过 Vue.extend 继承的父构造函数）</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="title class_">Ctor</span>.<span class="property">super</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> superOptions = <span class="title function_">resolveConstructorOptions</span>(<span class="title class_">Ctor</span>.<span class="property">super</span>); <span class="comment">// 递归解析父类选项</span></span><br><span class="line">    <span class="keyword">const</span> cachedSuperOptions = <span class="title class_">Ctor</span>.<span class="property">superOptions</span>; <span class="comment">// 父类上一次缓存的选项</span></span><br><span class="line">    <span class="keyword">if</span> (superOptions !== cachedSuperOptions) &#123;</span><br><span class="line">      <span class="comment">// 父类选项发生变化（例如动态修改了全局配置）</span></span><br><span class="line">      <span class="title class_">Ctor</span>.<span class="property">superOptions</span> = superOptions; <span class="comment">// 更新缓存的父类选项</span></span><br><span class="line">      <span class="comment">// 检查子类是否有被动态修改的选项（例如混入后手动修改）</span></span><br><span class="line">      <span class="keyword">const</span> modifiedOptions = <span class="title function_">resolveModifiedOptions</span>(<span class="title class_">Ctor</span>);</span><br><span class="line">      <span class="comment">// 合并修改到 extendOptions（子类扩展时传入的选项）</span></span><br><span class="line">      <span class="keyword">if</span> (modifiedOptions) &#123;</span><br><span class="line">        <span class="title function_">extend</span>(<span class="title class_">Ctor</span>.<span class="property">extendOptions</span>, modifiedOptions);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 重新合并父类选项和子类扩展选项</span></span><br><span class="line">      options = <span class="title class_">Ctor</span>.<span class="property">options</span> = <span class="title function_">mergeOptions</span>(superOptions, <span class="title class_">Ctor</span>.<span class="property">extendOptions</span>);</span><br><span class="line">      <span class="comment">// 注册组件自身名称（便于递归调用）</span></span><br><span class="line">      <span class="keyword">if</span> (options.<span class="property">name</span>) &#123;</span><br><span class="line">        options.<span class="property">components</span>[options.<span class="property">name</span>] = <span class="title class_">Ctor</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> options; <span class="comment">// 返回最终的构造函数选项</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="resolveModifiedOptions"><a href="#resolveModifiedOptions" class="headerlink" title="resolveModifiedOptions"></a>resolveModifiedOptions</h4><p><strong>核心作用</strong>：检测构造函数选项是否被动态修改（例如通过 <code>Vue.mixin</code> 后手动修改），确保在父类选项变化时能正确合并这些修改。</p>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">resolveModifiedOptions</span>(<span class="params"></span></span><br><span class="line"><span class="params">  Ctor: <span class="keyword">typeof</span> Component</span></span><br><span class="line"><span class="params"></span>): <span class="title class_">Record</span>&lt;string, any&gt; | <span class="literal">null</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> modified;</span><br><span class="line">  <span class="keyword">const</span> latest = <span class="title class_">Ctor</span>.<span class="property">options</span>;     <span class="comment">// 当前构造函数的选项</span></span><br><span class="line">  <span class="keyword">const</span> sealed = <span class="title class_">Ctor</span>.<span class="property">sealedOptions</span>; <span class="comment">// 构造函数创建时被“密封”的原始选项副本</span></span><br><span class="line">  <span class="comment">// 遍历所有选项键，对比最新值和密封值是否一致</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> latest) &#123;</span><br><span class="line">    <span class="keyword">if</span> (latest[key] !== sealed[key]) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!modified) modified = &#123;&#125;;</span><br><span class="line">      modified[key] = latest[key]; <span class="comment">// 记录被修改的选项</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> modified; <span class="comment">// 返回被修改的选项集合（若无修改返回 null）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="关键设计思想总结"><a href="#关键设计思想总结" class="headerlink" title="关键设计思想总结"></a><strong>关键设计思想总结</strong></h4><ol>
+<li><strong>性能优化</strong>：<ul>
+<li><code>initInternalComponent</code> 通过原型继承 (<code>Object.create</code>) 和直接赋值，避免深拷贝和动态枚举，提升内部组件初始化速度。</li>
+<li><code>resolveConstructorOptions</code> 通过缓存机制 (<code>superOptions</code>) 减少重复合并开销。</li>
+</ul>
+</li>
+<li><strong>继承与动态更新</strong>：<ul>
+<li>处理通过 <code>Vue.extend</code> 继承的子类，递归解析父类选项，确保全局配置变更（如 <code>Vue.config.optionMergeStrategies</code>）能正确传递。</li>
+<li>通过 <code>sealedOptions</code> 对比检测子类选项的动态修改（如手动修改 <code>Component.options</code>），保证合并结果准确。</li>
+</ul>
+</li>
+<li><strong>选项合并策略</strong>：<ul>
+<li>内部组件和普通组件的选项合并路径分离，前者优化性能，后者通过 <code>mergeOptions</code> 处理复杂合并逻辑（如生命周期钩子合并为数组）。</li>
+</ul>
+</li>
+</ol>
+<h3 id="initProxy"><a href="#initProxy" class="headerlink" title="initProxy"></a>initProxy</h3><p>在开发环境下，通过 <code>initProxy</code> 设置实例的渲染代理（拦截模板中未定义的属性访问并警告）；生产环境直接使用实例自身作为代理。当获取属性时，<code>options.render &amp;&amp; options.render._withStripped</code>条件成立时使用特定的拦截函数去处理</p>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断传入的参数是否存在</span></span><br><span class="line"><span class="keyword">const</span> allowedGlobals = <span class="title function_">makeMap</span>(</span><br><span class="line">    <span class="string">&#x27;Infinity,undefined,NaN,isFinite,isNaN,&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;Math,Number,Date,Array,Object,Boolean,String,RegExp,Map,Set,JSON,Intl,&#x27;</span> +</span><br><span class="line">    <span class="string">&#x27;require&#x27;</span> <span class="comment">// for Webpack/Browserify</span></span><br><span class="line">  )  </span><br><span class="line"><span class="comment">// 该函数的作用就是判断对象是否具有某个属性。可以看到首先用in操作符判断这个属性是否存在于_renderProxy中,当不存在 &amp;&amp; (属性名不为字符串 || 属性名首字母为_) &amp;&amp; allowedGlobals(key)为false时,提示警告信息&#x27;属性或方法没有在实例上定义&#x27;</span></span><br><span class="line"><span class="keyword">const</span> hasHandler = &#123;</span><br><span class="line">    <span class="title function_">has</span>(<span class="params">target, key</span>) &#123;</span><br><span class="line">      <span class="keyword">const</span> has = key <span class="keyword">in</span> target</span><br><span class="line">      <span class="comment">// 判断key名是否存在于allowedGlobals函数中生成的对象中 || (key名是string类型 &amp;&amp; 首字母是_)</span></span><br><span class="line">      <span class="keyword">const</span> isAllowed = <span class="title function_">allowedGlobals</span>(key) || (<span class="keyword">typeof</span> key === <span class="string">&#x27;string&#x27;</span> &amp;&amp; key.<span class="title function_">charAt</span>(<span class="number">0</span>) === <span class="string">&#x27;_&#x27;</span> &amp;&amp; !(key <span class="keyword">in</span> target.<span class="property">$data</span>))</span><br><span class="line">      <span class="comment">// 访问了一个没有定义在实例对象上(或原型链上)的属性 &amp;&amp; isAllowed为false提示警告</span></span><br><span class="line">      <span class="keyword">if</span> (!has &amp;&amp; !isAllowed) &#123;</span><br><span class="line">        <span class="keyword">if</span> (key <span class="keyword">in</span> target.<span class="property">$data</span>) <span class="title function_">warnReservedPrefix</span>(target, key)</span><br><span class="line">        <span class="keyword">else</span> <span class="title function_">warnNonPresent</span>(target, key)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> has || !isAllowed</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">// 这个比较好理解,就是读取_renderProxy中的属性的时候,当属性名为字符串 &amp;&amp; 不存在_renderProxy中时提示警告信息&#x27;属性或方法没有在实例上定义&#x27;。</span></span><br><span class="line">  <span class="keyword">const</span> getHandler = &#123;</span><br><span class="line">    <span class="title function_">get</span>(<span class="params">target, key</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> key === <span class="string">&#x27;string&#x27;</span> &amp;&amp; !(key <span class="keyword">in</span> target)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (key <span class="keyword">in</span> target.<span class="property">$data</span>) <span class="title function_">warnReservedPrefix</span>(target, key)</span><br><span class="line">        <span class="keyword">else</span> <span class="title function_">warnNonPresent</span>(target, key)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> target[key]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">initProxy</span>(<span class="params">vm</span>) &#123;</span><br><span class="line">    <span class="comment">//判断是否支持ES6的Proxy或存在Proxy函数</span></span><br><span class="line">    <span class="keyword">const</span> hasProxy =<span class="keyword">typeof</span> <span class="title class_">Proxy</span> !== <span class="string">&#x27;undefined&#x27;</span> &amp;&amp; <span class="title function_">isNative</span>(<span class="title class_">Proxy</span>)</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">if</span> (hasProxy) &#123;</span><br><span class="line">      <span class="comment">// determine which proxy handler to use</span></span><br><span class="line">      <span class="keyword">const</span> options = vm.<span class="property">$options</span></span><br><span class="line">      <span class="comment">// _withStripped属性主要用于在开发环境中对render函数进行代理处理，以便在调用render函数时能够正确地处理未定义的属性或方法。</span></span><br><span class="line">      <span class="comment">// 当读取_renderProxy的属性时进行了拦截操作,当该属性存在render函数和 render._withStripped属性时,执行的是getHandler拦截函数;否则就是执行hasHandler拦截函数,</span></span><br><span class="line">      <span class="keyword">const</span> handlers = options.<span class="property">render</span> &amp;&amp; options.<span class="property">render</span>.<span class="property">_withStripped</span> ? getHandler : hasHandler</span><br><span class="line">      vm.<span class="property">_renderProxy</span> = <span class="keyword">new</span> <span class="title class_">Proxy</span>(vm, handlers)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      vm.<span class="property">_renderProxy</span> = vm</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">// 当访问_renderProxy上属性时会走getHandler或hasHandler,返回值或者抛出警告</span></span><br><span class="line"><span class="comment">// 当在页面中data中定义$a/_a,标签里直接使用$a/_a时，会报错 </span></span><br><span class="line"><span class="comment">// [Vue warn]: Property &quot;$a&quot; must be accessed with &quot;$data.$a&quot; because properties starting with &quot;$&quot; or &quot;_&quot; are not proxied in the Vue instance to prevent conflicts with Vue internals.</span></span><br><span class="line"><span class="comment">// [Vue warn]: Property &quot;_a&quot; must be accessed with &quot;$data._a&quot; because properties starting with &quot;$&quot; or &quot;_&quot; are not proxied in the Vue instance to prevent conflicts with Vue internals.</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="initLifecycle"><a href="#initLifecycle" class="headerlink" title="initLifecycle"></a>initLifecycle</h3><p>初始化实例的父子组件关系，挂载<code>$parent、$root、$children、$refs</code>等属性</p>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initLifecycle</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> options = vm.<span class="property">$options</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// locate first non-abstract parent</span></span><br><span class="line">  <span class="keyword">let</span> parent = options.<span class="property">parent</span></span><br><span class="line">  <span class="keyword">if</span> (parent &amp;&amp; !options.<span class="property">abstract</span>) &#123;</span><br><span class="line">    <span class="keyword">while</span> (parent.<span class="property">$options</span>.<span class="property">abstract</span> &amp;&amp; parent.<span class="property">$parent</span>) &#123;</span><br><span class="line">      parent = parent.<span class="property">$parent</span></span><br><span class="line">    &#125;</span><br><span class="line">    parent.<span class="property">$children</span>.<span class="title function_">push</span>(vm)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  vm.<span class="property">$parent</span> = parent</span><br><span class="line">  vm.<span class="property">$root</span> = parent ? parent.<span class="property">$root</span> : vm</span><br><span class="line"></span><br><span class="line">  vm.<span class="property">$children</span> = []</span><br><span class="line">  vm.<span class="property">$refs</span> = &#123;&#125;</span><br><span class="line"></span><br><span class="line">  vm.<span class="property">_provided</span> = parent ? parent.<span class="property">_provided</span> : <span class="title class_">Object</span>.<span class="title function_">create</span>(<span class="literal">null</span>)</span><br><span class="line">  vm.<span class="property">_watcher</span> = <span class="literal">null</span></span><br><span class="line">  vm.<span class="property">_inactive</span> = <span class="literal">null</span></span><br><span class="line">  vm.<span class="property">_directInactive</span> = <span class="literal">false</span></span><br><span class="line">  vm.<span class="property">_isMounted</span> = <span class="literal">false</span></span><br><span class="line">  vm.<span class="property">_isDestroyed</span> = <span class="literal">false</span></span><br><span class="line">  vm.<span class="property">_isBeingDestroyed</span> = <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="initEvents"><a href="#initEvents" class="headerlink" title="initEvents"></a>initEvents</h3><ol>
+<li><strong>初始化事件</strong>：<code>initEvents</code> 在组件实例化时调用，初始化 <code>_events</code> 容器，并处理父组件传递的事件。</li>
+<li><strong>更新监听器</strong>：当父组件传递的事件变化时（如父组件重新渲染），调用 <code>updateComponentListeners</code>：<ul>
+<li>通过 <code>updateListeners</code> 对比新旧监听器。</li>
+<li>使用 <code>add</code>、<code>remove</code>、<code>createOnceHandler</code> 进行事件绑定&#x2F;解绑。</li>
+</ul>
+</li>
+<li><strong>一次性事件</strong>：通过包装函数确保回调执行后自动解绑。</li>
+</ol>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initEvents</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  vm.<span class="property">_events</span> = <span class="title class_">Object</span>.<span class="title function_">create</span>(<span class="literal">null</span>)</span><br><span class="line">  vm.<span class="property">_hasHookEvent</span> = <span class="literal">false</span></span><br><span class="line">  <span class="keyword">const</span> listeners = vm.<span class="property">$options</span>.<span class="property">_parentListeners</span> <span class="comment">// 获取父组件绑定在子组件上的事件监听器</span></span><br><span class="line">  <span class="keyword">if</span> (listeners) &#123;</span><br><span class="line">    <span class="title function_">updateComponentListeners</span>(vm, listeners)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="attr">target</span>: any</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params">event, fn</span>) &#123;</span><br><span class="line">  target.$on(event, fn)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">remove</span>(<span class="params">event, fn</span>) &#123;</span><br><span class="line">  target.$off(event, fn)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createOnceHandler</span>(<span class="params">event, fn</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> _target = target</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> <span class="title function_">onceHandler</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> res = fn.<span class="title function_">apply</span>(<span class="literal">null</span>, <span class="variable language_">arguments</span>)</span><br><span class="line">    <span class="keyword">if</span> (res !== <span class="literal">null</span>) &#123;</span><br><span class="line">      _target.$off(event, onceHandler)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">updateComponentListeners</span>(<span class="params"></span></span><br><span class="line"><span class="params">  vm: Component,</span></span><br><span class="line"><span class="params">  listeners: <span class="built_in">Object</span>,</span></span><br><span class="line"><span class="params">  oldListeners?: <span class="built_in">Object</span> | <span class="literal">null</span></span></span><br><span class="line"><span class="params"></span>) &#123;</span><br><span class="line">  target = vm</span><br><span class="line">  <span class="title function_">updateListeners</span>(</span><br><span class="line">    listeners,</span><br><span class="line">    oldListeners || &#123;&#125;,</span><br><span class="line">    add,</span><br><span class="line">    remove,</span><br><span class="line">    createOnceHandler,</span><br><span class="line">    vm</span><br><span class="line">  )</span><br><span class="line">  target = <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li><p>**<code>updateListeners</code>**：Vue 内部工具函数，用于对比新旧监听器，调用 <code>add</code> 和 <code>remove</code> 进行增量更新。</p>
+</li>
+<li><p><strong>流程</strong>：</p>
+<ol>
+<li>遍历新监听器，对比旧监听器：<ul>
+<li>若事件不存在于旧监听器，调用 <code>add</code> 添加。</li>
+<li>若事件回调变化，先调用 <code>remove</code> 移除旧的，再 <code>add</code> 新的。</li>
+</ul>
+</li>
+<li>遍历旧监听器，移除不存在于新监听器中的事件。</li>
+</ol>
+</li>
+<li><p><strong>一次性事件处理</strong>：通过 <code>createOnceHandler</code> 生成包装函数，确保执行后自动解绑。</p>
+</li>
+<li><p><strong><code>target</code> 的作用</strong>：通过全局变量临时存储当前组件实例，使得 <code>add</code>、<code>remove</code>、<code>createOnceHandler</code> 能正确操作目标实例。</p>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">updateListeners</span>(<span class="params"></span></span><br><span class="line"><span class="params">  on: <span class="built_in">Object</span>,</span></span><br><span class="line"><span class="params">  oldOn: <span class="built_in">Object</span>,</span></span><br><span class="line"><span class="params">  add: <span class="built_in">Function</span>,</span></span><br><span class="line"><span class="params">  remove: <span class="built_in">Function</span>,</span></span><br><span class="line"><span class="params">  createOnceHandler: <span class="built_in">Function</span>,</span></span><br><span class="line"><span class="params">  vm: Component</span></span><br><span class="line"><span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> name, cur, old, event</span><br><span class="line">  <span class="keyword">for</span> (name <span class="keyword">in</span> on) &#123;</span><br><span class="line">    cur = on[name]</span><br><span class="line">    old = oldOn[name]</span><br><span class="line">    event = <span class="title function_">normalizeEvent</span>(name) <span class="comment">// 解析事件名中的修饰符（如 @click.once 解析为 &#123; name: &#x27;click&#x27;, once: true &#125;）</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">isUndef</span>(cur)) &#123;</span><br><span class="line">      __DEV__ &amp;&amp;</span><br><span class="line">        <span class="title function_">warn</span>(</span><br><span class="line">          <span class="string">`Invalid handler for event &quot;<span class="subst">$&#123;event.name&#125;</span>&quot;: got `</span> + <span class="title class_">String</span>(cur),</span><br><span class="line">          vm</span><br><span class="line">        )</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="title function_">isUndef</span>(old)) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="title function_">isUndef</span>(cur.<span class="property">fns</span>)) &#123;</span><br><span class="line">        cur = on[name] = <span class="title function_">createFnInvoker</span>(cur, vm) <span class="comment">// 将用户提供的回调函数（可能是数组或单个函数）封装成统一格式的调用器（invoker），便于后续更新</span></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (<span class="title function_">isTrue</span>(event.<span class="property">once</span>)) &#123;</span><br><span class="line">        cur = on[name] = <span class="title function_">createOnceHandler</span>(event.<span class="property">name</span>, cur, event.<span class="property">capture</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="title function_">add</span>(event.<span class="property">name</span>, cur, event.<span class="property">capture</span>, event.<span class="property">passive</span>, event.<span class="property">params</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (cur !== old) &#123;</span><br><span class="line">      old.<span class="property">fns</span> = cur <span class="comment">// 当回调函数变化时，直接修改旧回调的 fns 属性，避免触发 DOM 事件解绑和重新绑定，优化性能。</span></span><br><span class="line">      on[name] = old</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (name <span class="keyword">in</span> oldOn) &#123;</span><br><span class="line">    <span class="comment">// 旧事件不在新事件列表中时，调用 remove 解绑，确保不再监听无用事件。</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">isUndef</span>(on[name])) &#123;</span><br><span class="line">      event = <span class="title function_">normalizeEvent</span>(name)</span><br><span class="line">      <span class="title function_">remove</span>(event.<span class="property">name</span>, oldOn[name], event.<span class="property">capture</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h3 id="initRender"><a href="#initRender" class="headerlink" title="initRender"></a>initRender</h3><p><code>initRender</code>方法在组件初始化阶段完成以下任务：</p>
+<ul>
+<li>初始化虚拟节点和静态树缓存。</li>
+<li>解析父组件传递的插槽内容（普通和作用域插槽）。</li>
+<li>绑定创建虚拟节点的工具方法（<code>_c</code>和<code>$createElement</code>）。</li>
+<li>定义响应式的<code>$attrs</code>和<code>$listeners</code>，确保其只读性和响应性。</li>
+</ul>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">xport <span class="keyword">function</span> <span class="title function_">initRender</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  vm.<span class="property">_vnode</span> = <span class="literal">null</span> <span class="comment">// the root of the child tree</span></span><br><span class="line">  vm.<span class="property">_staticTrees</span> = <span class="literal">null</span> <span class="comment">// v-once cached trees 缓存v-once标记的静态内容，避免重复渲染，提升性能。</span></span><br><span class="line">  <span class="keyword">const</span> options = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">const</span> parentVnode = (vm.<span class="property">$vnode</span> = options.<span class="property">_parentVnode</span>!) <span class="comment">// the placeholder node in parent tree</span></span><br><span class="line">  <span class="keyword">const</span> renderContext = parentVnode &amp;&amp; (parentVnode.<span class="property">context</span> <span class="keyword">as</span> <span class="title class_">Component</span>)</span><br><span class="line">  vm.<span class="property">$slots</span> = <span class="title function_">resolveSlots</span>(options.<span class="property">_renderChildren</span>, renderContext)</span><br><span class="line">  <span class="comment">// resolveSlots：将父组件传递的子节点（_renderChildren）转换为普通插槽（$slots），按插槽名分类。</span></span><br><span class="line">  vm.<span class="property">$scopedSlots</span> = parentVnode ? <span class="title function_">normalizeScopedSlots</span>(vm.<span class="property">$parent</span>!, parentVnode.<span class="property">data</span>!.<span class="property">scopedSlots</span>, vm.<span class="property">$slots</span>) </span><br><span class="line">  : emptyObject</span><br><span class="line">  <span class="comment">// normalizeScopedSlots：处理作用域插槽，确保与普通插槽兼容，最终合并到$scopedSlots。</span></span><br><span class="line">  <span class="comment">// _c 模板编译生成的渲染函数使用，最后一个参数false表示不对子节点进行标准化（编译时已处理）</span></span><br><span class="line">  vm.<span class="property">_c</span> = <span class="function">(<span class="params">a, b, c, d</span>) =&gt;</span> <span class="title function_">createElement</span>(vm, a, b, c, d, <span class="literal">false</span>)</span><br><span class="line">  <span class="comment">// $createElement 用户手写render函数时使用，true表示需要标准化子节点（如处理嵌套数组）。</span></span><br><span class="line">  vm.<span class="property">$createElement</span> = <span class="function">(<span class="params">a, b, c, d</span>) =&gt;</span> <span class="title function_">createElement</span>(vm, a, b, c, d, <span class="literal">true</span>)</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">const</span> parentData = parentVnode &amp;&amp; parentVnode.<span class="property">data</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// defineReactive：将$attrs和$listeners定义为响应式属性。</span></span><br><span class="line">  <span class="comment">// 参数5（true）：表示浅层响应式（仅对象本身变化触发，不深度观察内部属性）。</span></span><br><span class="line">  <span class="comment">// 参数4 customSetter：在开发环境下，若直接修改$attrs或$listeners（非通过父组件更新），触发警告。</span></span><br><span class="line">  <span class="comment">// isUpdatingChildComponent：Vue内部标志，避免在父组件更新子组件时误报警告。</span></span><br><span class="line">  <span class="keyword">if</span> (__DEV__) &#123;</span><br><span class="line">    <span class="title function_">defineReactive</span>(vm, <span class="string">&#x27;$attrs&#x27;</span>, (parentData &amp;&amp; parentData.<span class="property">attrs</span>) || emptyObject,</span><br><span class="line">      <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        !isUpdatingChildComponent &amp;&amp; <span class="title function_">warn</span>(<span class="string">`$attrs is readonly.`</span>, vm)</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="literal">true</span></span><br><span class="line">    )</span><br><span class="line">    <span class="title function_">defineReactive</span>(vm, <span class="string">&#x27;$listeners&#x27;</span>, options.<span class="property">_parentListeners</span> || emptyObject,</span><br><span class="line">      <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        !isUpdatingChildComponent &amp;&amp; <span class="title function_">warn</span>(<span class="string">`$listeners is readonly.`</span>, vm)</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="literal">true</span></span><br><span class="line">    )</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">defineReactive</span>(vm, <span class="string">&#x27;$attrs&#x27;</span>, (parentData &amp;&amp; parentData.<span class="property">attrs</span>) || emptyObject, <span class="literal">null</span>, <span class="literal">true</span>)</span><br><span class="line">    <span class="title function_">defineReactive</span>(vm, <span class="string">&#x27;$listeners&#x27;</span>, options.<span class="property">_parentListeners</span> || emptyObject, <span class="literal">null</span>, <span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="initInjections"><a href="#initInjections" class="headerlink" title="initInjections"></a>initInjections</h3><p><code>initInjections</code> 方法的作用是：</p>
+<ol>
+<li>解析组件的 <code>inject</code> 配置，从祖先组件获取对应值。</li>
+<li>将注入值绑定到组件实例，使其成为响应式属性。</li>
+<li>在开发环境下阻止直接修改注入值，维护单向数据流。</li>
+</ol>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initInjections</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  <span class="comment">// 解析组件配置中的 `inject` 选项，获取注入的值</span></span><br><span class="line">  <span class="keyword">const</span> result = <span class="title function_">resolveInject</span>(vm.<span class="property">$options</span>.<span class="property">inject</span>, vm)</span><br><span class="line">  <span class="keyword">if</span> (result) &#123;</span><br><span class="line">    <span class="comment">// 临时关闭响应式观察（避免对注入值进行深度响应式处理）</span></span><br><span class="line">    <span class="comment">// Vue 内部通过toggleObserving函数控制是否对数据对象进行递归响应式观察。此处关闭观察，因为：</span></span><br><span class="line">    <span class="comment">// 性能优化：注入的值可能已经是响应式的（由祖先组件提供），避免重复处理。</span></span><br><span class="line">    <span class="comment">// 避免意外行为：防止对注入的原始值（如非对象类型的值）进行不必要的观察。</span></span><br><span class="line">    <span class="title function_">toggleObserving</span>(<span class="literal">false</span>)</span><br><span class="line">    <span class="comment">// 遍历注入的键值对，开发环境下，为注入属性添加自定义 setter 警告</span></span><br><span class="line">    <span class="title class_">Object</span>.<span class="title function_">keys</span>(result).<span class="title function_">forEach</span>(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (__DEV__) &#123;</span><br><span class="line">        <span class="title function_">defineReactive</span>(vm, key, result[key], <span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="title function_">warn</span>(</span><br><span class="line">            <span class="string">`Avoid mutating an injected value directly since the changes will be `</span> +</span><br><span class="line">              <span class="string">`overwritten whenever the provided component re-renders. `</span> +</span><br><span class="line">              <span class="string">`injection being mutated: &quot;<span class="subst">$&#123;key&#125;</span>&quot;`</span>,</span><br><span class="line">            vm</span><br><span class="line">          )</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="title function_">defineReactive</span>(vm, key, result[key])</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="comment">// 恢复响应式观察</span></span><br><span class="line">    <span class="title function_">toggleObserving</span>(<span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="initState"><a href="#initState" class="headerlink" title="initState"></a>initState</h3><p><code>initState</code>是组件状态初始化的核心入口，负责：</p>
+<ul>
+<li>按顺序处理props、setup、methods、data、computed和watch。</li>
+<li>将各类状态转化为响应式数据。</li>
+<li>确保组件实例上下文（<code>this</code>）能正确访问所有状态和方法。</li>
+</ul>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initState</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> opts = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">props</span>) <span class="title function_">initProps</span>(vm, opts.<span class="property">props</span>) <span class="comment">// props需在data之前初始化，因为data可能依赖props的值。</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// Composition API</span></span><br><span class="line">  <span class="title function_">initSetup</span>(vm)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">methods</span>) <span class="title function_">initMethods</span>(vm, opts.<span class="property">methods</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">data</span>) &#123;</span><br><span class="line">    <span class="title function_">initData</span>(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> ob = <span class="title function_">observe</span>((vm.<span class="property">_data</span> = &#123;&#125;))</span><br><span class="line">    ob &amp;&amp; ob.<span class="property">vmCount</span>++</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">computed</span>) <span class="title function_">initComputed</span>(vm, opts.<span class="property">computed</span>) <span class="comment">// 计算属性可能依赖data或props，故需在它们之后初始化。</span></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">watch</span> &amp;&amp; opts.<span class="property">watch</span> !== nativeWatch) &#123;</span><br><span class="line">    <span class="title function_">initWatch</span>(vm, opts.<span class="property">watch</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="initProps"><a href="#initProps" class="headerlink" title="initProps"></a>initProps</h4><p><code>initProps</code>的核心逻辑是：</p>
+<ol>
+<li>提取并校验父组件传递的props。</li>
+<li>将其转为浅响应式对象，代理到组件实例。</li>
+<li>在开发环境下防御非法操作（保留属性名、直接修改）。</li>
+<li>优化性能和维护单向数据流。</li>
+</ol>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">initProps</span>(<span class="params">vm: Component, propsOptions: <span class="built_in">Object</span></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> propsData = vm.<span class="property">$options</span>.<span class="property">propsData</span> || &#123;&#125; <span class="comment">// 从组件实例的配置中提取父组件传递的实际prop值</span></span><br><span class="line">  <span class="keyword">const</span> props = (vm.<span class="property">_props</span> = <span class="title function_">shallowReactive</span>(&#123;&#125;)) <span class="comment">// 使用Vue 3的浅响应式API，仅对props对象的第一层属性进行响应式处理，优化性能并避免深层意外修改。</span></span><br><span class="line">  <span class="keyword">const</span> <span class="attr">keys</span>: string[] = (vm.<span class="property">$options</span>.<span class="property">_propKeys</span> = []) <span class="comment">// 缓存所有prop的键名到数组，后续更新props时可直接遍历数组，避免动态枚举对象键，提高效率。</span></span><br><span class="line">  <span class="keyword">const</span> isRoot = !vm.<span class="property">$parent</span></span><br><span class="line">  <span class="keyword">if</span> (!isRoot) &#123;</span><br><span class="line">    <span class="title function_">toggleObserving</span>(<span class="literal">false</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> propsOptions) &#123;</span><br><span class="line">    keys.<span class="title function_">push</span>(key)</span><br><span class="line">    <span class="keyword">const</span> value = <span class="title function_">validateProp</span>(key, propsOptions, propsData, vm)</span><br><span class="line">    <span class="comment">// 校验prop类型、默认值、必填性等，返回处理后的值。例如：</span></span><br><span class="line">    <span class="comment">// 若父组件未传值但prop有default，使用默认值。</span></span><br><span class="line">    <span class="comment">// 类型不匹配时，开发环境警告。</span></span><br><span class="line">    <span class="keyword">if</span> (__DEV__) &#123;</span><br><span class="line">      <span class="keyword">const</span> hyphenatedKey = <span class="title function_">hyphenate</span>(key) <span class="comment">// 检查prop名称是否为HTML保留属性（如class、style），防止命名冲突。</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="title function_">isReservedAttribute</span>(hyphenatedKey) || config.<span class="title function_">isReservedAttr</span>(hyphenatedKey)) &#123;</span><br><span class="line">        <span class="title function_">warn</span>(</span><br><span class="line">          <span class="string">`&quot;<span class="subst">$&#123;hyphenatedKey&#125;</span>&quot; is a reserved attribute and cannot be used as component prop.`</span>,</span><br><span class="line">          vm</span><br><span class="line">        )</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="title function_">defineReactive</span>(props, key, value, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// 将prop定义为响应式属性</span></span><br><span class="line">          <span class="keyword">if</span> (!isRoot &amp;&amp; !isUpdatingChildComponent) &#123;</span><br><span class="line">            <span class="title function_">warn</span>(</span><br><span class="line">              <span class="string">`Avoid mutating a prop directly since the value will be `</span> +</span><br><span class="line">                <span class="string">`overwritten whenever the parent component re-renders. `</span> +</span><br><span class="line">                <span class="string">`Instead, use a data or computed property based on the prop&#x27;s `</span> +</span><br><span class="line">                <span class="string">`value. Prop being mutated: &quot;<span class="subst">$&#123;key&#125;</span>&quot;`</span>,</span><br><span class="line">              vm</span><br><span class="line">            )</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="literal">true</span> <span class="comment">/* shallow */</span></span><br><span class="line">      )</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="title function_">defineReactive</span>(props, key, value, <span class="literal">undefined</span>, <span class="literal">true</span> <span class="comment">/* shallow */</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!(key <span class="keyword">in</span> vm)) &#123;</span><br><span class="line">      <span class="title function_">proxy</span>(vm, <span class="string">`_props`</span>, key) <span class="comment">// 将vm._props[key]代理到vm[key]，允许通过this.key直接访问prop，无需this._props.key。</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="title function_">toggleObserving</span>(<span class="literal">true</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="initSetup"><a href="#initSetup" class="headerlink" title="initSetup"></a>initSetup</h4><p><code>initSetup</code> 是 Vue 3 Composition API 的核心实现之一，负责：</p>
+<ul>
+<li>执行 <code>setup</code> 函数并管理其上下文。</li>
+<li>处理返回值（渲染函数或响应式对象）。</li>
+<li>将响应式状态代理到组件实例，优化模板访问。</li>
+<li>提供开发环境警告与错误处理。</li>
+</ul>
+<div class="code-container" data-rel="Javascript"><figure class="iseeu highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initSetup</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> options = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">const</span> setup = options.<span class="property">setup</span></span><br><span class="line">  <span class="keyword">if</span> (setup) &#123;</span><br><span class="line">    <span class="keyword">const</span> ctx = (vm.<span class="property">_setupContext</span> = <span class="title function_">createSetupContext</span>(vm)) <span class="comment">// 生成包含 attrs、slots、emit 等属性的上下文对象，供 setup 函数使用</span></span><br><span class="line">    <span class="title function_">setCurrentInstance</span>(vm) <span class="comment">// 设置当前组件实例，确保在 setup 中通过 getCurrentInstance() 获取正确实例</span></span><br><span class="line">    <span class="title function_">pushTarget</span>() <span class="comment">// 暂停依赖收集（避免 setup 执行期间收集到父组件的依赖），确保响应式系统正确追踪当前组件。</span></span><br><span class="line">    <span class="comment">// 执行 setup 函数，并处理可能的错误</span></span><br><span class="line">    <span class="keyword">const</span> setupResult = <span class="title function_">invokeWithErrorHandling</span>(</span><br><span class="line">      setup,</span><br><span class="line">      <span class="literal">null</span>,</span><br><span class="line">      [vm.<span class="property">_props</span> || <span class="title function_">shallowReactive</span>(&#123;&#125;), ctx],</span><br><span class="line">      vm,</span><br><span class="line">      <span class="string">`setup`</span></span><br><span class="line">    )</span><br><span class="line">    <span class="title function_">popTarget</span>() <span class="comment">// 恢复依赖收集</span></span><br><span class="line">    <span class="title function_">setCurrentInstance</span>() <span class="comment">// 清除当前实例引用</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 返回函数：视为渲染函数，覆盖 options.render，允许 setup 替代 render 选项。</span></span><br><span class="line">    <span class="comment">// 返回对象：</span></span><br><span class="line">    <span class="comment">// 	       普通对象：将每个属性代理到组件实例（vm），自动解包 ref 值（无需 .value）。</span></span><br><span class="line">    <span class="comment">//         编译生成对象（__sfc 标记）：代理到 vm._setupProxy，供编译后的渲染函数高效访问。</span></span><br><span class="line">    <span class="comment">//         保留属性名：开发环境警告避免使用 _ 或 $ 开头的变量名（可能与 Vue 内部属性冲突）。</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">isFunction</span>(setupResult)) &#123;</span><br><span class="line">      <span class="comment">// render function</span></span><br><span class="line">      <span class="comment">// @ts-ignore</span></span><br><span class="line">      options.<span class="property">render</span> = setupResult</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="title function_">isObject</span>(setupResult)) &#123;</span><br><span class="line">      <span class="comment">// bindings</span></span><br><span class="line">      <span class="keyword">if</span> (__DEV__ &amp;&amp; setupResult <span class="keyword">instanceof</span> <span class="title class_">VNode</span>) &#123;</span><br><span class="line">        <span class="title function_">warn</span>(</span><br><span class="line">          <span class="string">`setup() should not return VNodes directly - `</span> +</span><br><span class="line">            <span class="string">`return a render function instead.`</span></span><br><span class="line">        )</span><br><span class="line">      &#125;</span><br><span class="line">      vm.<span class="property">_setupState</span> = setupResult</span><br><span class="line">      <span class="comment">// __sfc indicates compiled bindings from &lt;script setup&gt;</span></span><br><span class="line">      <span class="comment">// 处理非编译生成的绑定（普通 setup 返回）</span></span><br><span class="line">      <span class="keyword">if</span> (!setupResult.<span class="property">__sfc</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> setupResult) &#123;</span><br><span class="line">          <span class="keyword">if</span> (!<span class="title function_">isReserved</span>(key)) &#123;</span><br><span class="line">            <span class="comment">// 跳过以 _ 或 $ 开头的保留属性，将每个属性代理到组件实例，自动解包 ref</span></span><br><span class="line">            <span class="title function_">proxyWithRefUnwrap</span>(vm, setupResult, key)</span><br><span class="line">          &#125; <span class="keyword">else</span> <span class="keyword">if</span> (__DEV__) &#123;</span><br><span class="line">            <span class="title function_">warn</span>(<span class="string">`Avoid using variables that start with _ or $ in setup().`</span>)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// exposed for compiled render fn</span></span><br><span class="line">        <span class="comment">// 处理编译生成的绑定（如 &lt;script setup&gt; 语法）</span></span><br><span class="line">        <span class="keyword">const</span> proxy = (vm.<span class="property">_setupProxy</span> = &#123;&#125;)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> setupResult) &#123;</span><br><span class="line">          <span class="keyword">if</span> (key !== <span class="string">&#x27;__sfc&#x27;</span>) &#123;</span><br><span class="line">            <span class="title function_">proxyWithRefUnwrap</span>(proxy, setupResult, key)</span><br><span class="line">            <span class="comment">// 将 setup 返回的响应式属性（如 ref、reactive）代理到组件实例，并在访问时自动解包 ref 值</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (__DEV__ &amp;&amp; setupResult !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">      <span class="title function_">warn</span>(</span><br><span class="line">        <span class="string">`setup() should return an object. Received: <span class="subst">$&#123;</span></span></span><br><span class="line"><span class="subst"><span class="string">          setupResult === <span class="literal">null</span> ? <span class="string">&#x27;null&#x27;</span> : <span class="keyword">typeof</span> setupResult</span></span></span><br><span class="line"><span class="subst"><span class="string">        &#125;</span>`</span></span><br><span class="line">      )</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+
+<h2 id="关键设计思想总结-1"><a href="#关键设计思想总结-1" class="headerlink" title="关键设计思想总结"></a>关键设计思想总结</h2><ol>
+<li><strong>模块化初始化</strong>：通过 <code>initLifecycle</code>、<code>initEvents</code> 等函数分离关注点，确保逻辑清晰。</li>
+<li><strong>生命周期控制</strong>：在关键节点触发钩子（如 <code>beforeCreate</code> 和 <code>created</code>），让开发者介入初始化过程。</li>
+<li><strong>响应式前置</strong>：在 <code>initState</code> 中完成数据劫持，确保后续操作能依赖响应式系统。</li>
+<li><strong>性能优化</strong>：开发环境下的性能标记和代理检查，生产环境去除非必要逻辑。</li>
+</ol>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> Vue2源码学习 - Vue 实例初始化（核心入口）</li>
+        <li><strong>Author:</strong> chengj-code</li>
+        <li><strong>Created at
+                :</strong> 2025-05-17 00:00:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-05-18 22:07:10
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://chengj-code.github.io/2025/05/17/Vue2源码学习/Vue2源码学习 - Vue 实例初始化（核心入口）/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E5%AD%A6%E4%B9%A0-v2-7-16/">#学习, v2.7.16</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2025/05/17/Vue2%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0/Vue2%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%20-%20%E6%80%BB%E7%BB%93/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Vue2源码学习 - 总结</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">Vue2源码学习 - Vue 实例初始化（核心入口）</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue2%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB%E9%A1%BA%E5%BA%8F"><span class="nav-text">Vue2源码解读顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-%E5%AE%9E%E4%BE%8B%E5%88%9D%E5%A7%8B%E5%8C%96%EF%BC%88%E6%A0%B8%E5%BF%83%E5%85%A5%E5%8F%A3%EF%BC%89"><span class="nav-text">Vue 实例初始化（核心入口）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-text">构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E9%80%89%E9%A1%B9"><span class="nav-text">合并构造函数选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initProxy"><span class="nav-text">initProxy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initLifecycle"><span class="nav-text">initLifecycle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initEvents"><span class="nav-text">initEvents</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initRender"><span class="nav-text">initRender</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initInjections"><span class="nav-text">initInjections</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#initState"><span class="nav-text">initState</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E6%80%BB%E7%BB%93-1"><span class="nav-text">关键设计思想总结</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">chengj-code</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        5 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>
