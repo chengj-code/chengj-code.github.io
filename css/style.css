@@ -5655,6 +5655,7 @@ html.is-animating .transition-fade-down {
   opacity: 1;
   transition: opacity 0.2s ease-in 0.2s;
   width: 210px;
+  flex-shrink: 0;
 }
 .post-page-container.show-toc .toc-content-container:hover::-webkit-scrollbar-thumb {
   border: 3px solid rgba(183,183,183,0.3);
